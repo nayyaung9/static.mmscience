@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
@@ -14,28 +14,49 @@ export default ({ data }) => {
             display: inline-block;
             border-bottom: 1px solid;
           `}
+        >  
           mmscience
-        ></h1>
+        </h1>
+
         <h4>{data.allMarkdownRemark.totalCount} posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <h3
+
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+
+            <div 
+              key={node.id}
               css={css`
-                margin-bottom: ${rhythm(1 / 4)};
-              `}
-            > 
-              {node.frontmatter.title}{" "} <br />
-              <span
+              box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+              padding: 1rem 1rem;
+              border-radius: .5em;
+              cursor: pointer;
+              margin-bottom: 20px;
+              background-color: #fff;
+            `}>
+              <Link
+                to={node.fields.slug}
                 css={css`
-                  color: #bbb;
+                  text-decoration: none;
+                  color: inherit;
                 `}
               >
-                {node.frontmatter.date} {node.frontmatter.tags} 
-              </span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </div>
-        ))}
+                <h3
+                  css={css`
+                    margin-bottom: ${rhythm(1 / 4)};
+                  `}
+                > 
+                  {node.frontmatter.title}{" "} <br />
+                  <span
+                    css={css`
+                      color: #bbb;
+                    `}
+                  >
+                    {node.frontmatter.date} {node.frontmatter.tags} 
+                  </span>
+                </h3>
+                <p>{node.excerpt}</p>
+              </Link>
+            </div>
+          ))}
       </div>
     </Layout>
   )
@@ -52,6 +73,9 @@ query {
           title
           date(formatString: "DD MMMM, YYYY")
           tags
+        }
+        fields {
+          slug
         }
         excerpt
       }
