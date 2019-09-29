@@ -29,7 +29,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="fade" light expand="md" style={{ boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)' }}>
+        <Navbar color="fade" light expand="md" style={{ boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)', background: 'white' }} fixed="top">
           <div className="container">
             <NavbarBrand href="/">
               <strong>mm science</strong>
@@ -38,7 +38,7 @@ export default class Example extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+                  <NavLink href="/discover/">Discover</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>

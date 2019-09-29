@@ -5,7 +5,9 @@ export default ({ children }) => (
   <div>
     <Navbar/>
     <div className="container">
-      {children}
+      <main style={{ marginTop: '80px' }}>
+        {children}
+      </main>
     </div>
   </div>
 )
