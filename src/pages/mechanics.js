@@ -8,20 +8,12 @@ export default ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <div>
-        <h1
-          css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
-        >  
-          mmscience
-        </h1>
-
+      
         <h4>{data.allMarkdownRemark.totalCount} posts</h4>
 
+        <div className="row">
           {data.allMarkdownRemark.edges.map(({ node }) => (
-
+            <div class="col-md-4">
             <div 
               key={node.id}
               css={css`
@@ -31,6 +23,7 @@ export default ({ data }) => {
                 cursor: pointer;
                 margin-bottom: 20px;
                 background-color: #fff;
+                height: 200px;
             `}>
               <Link
                 to={node.fields.slug}
@@ -56,8 +49,9 @@ export default ({ data }) => {
                 <p>{node.excerpt}</p>
               </Link>
             </div>
+            </div>
           ))}
-      </div>
+     </div>
     </Layout>
   )
 }
