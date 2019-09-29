@@ -1,4 +1,5 @@
 ---
+path: "/what-is-machine"
 title: "What is machine?"
 date: "2017-08-10"
 tags: ['mechanics']
