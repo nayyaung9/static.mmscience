@@ -21,25 +21,36 @@ const TagsPage = ({
   <Layout>
     <Helmet title={title} />
     <div>
-      <h1>Tags</h1>
-  
-        {group.map(tag => (
-            <div 
-              key={tag.fieldValue}
-              css={css`
-              box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
-              padding: 1rem 1rem;
-              border-radius: .5em;
-              cursor: pointer;
-              margin-bottom: 20px;
-              background-color: #fff;
-          `}>
-            <Link to={`/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>      
-          </div>
-        ))}
-  
+      <h1>Discover</h1>
+        <div className="row">
+
+          {group.map(tag => (
+            <div className="col-md-4">
+              <div 
+                key={tag.fieldValue}
+                css={css`
+                box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+                padding: 1rem 1rem;
+                border-radius: .5em;
+                cursor: pointer;
+                margin-bottom: 20px;
+                background-color: #fff;
+            `}>
+              <Link 
+                to={`/${kebabCase(tag.fieldValue)}/`}
+                css={css`
+                  color: #1ca086;
+                  text-decoration: none;
+              `}
+              >
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>      
+            </div>
+            </div>
+          ))}
+
+       
+        </div>
     </div>
   </Layout>
 )

@@ -25,7 +25,7 @@ export default ({ data }) => {
             <div 
               key={node.id}
               css={css`
-                box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
                 padding: 1rem 1rem;
                 border-radius: .5em;
                 cursor: pointer;
