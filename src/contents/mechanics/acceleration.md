@@ -2,6 +2,7 @@
 title: "Sweet Pandas Eating Sweets"
 date: "2017-08-10"
 tags: ['mechanics']
+featuredImage: './images/acceleration0.jpg'
 ---
 
 Pandas are really sweet.

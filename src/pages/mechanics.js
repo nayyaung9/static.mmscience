@@ -25,12 +25,12 @@ export default ({ data }) => {
             <div 
               key={node.id}
               css={css`
-              box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
-              padding: 1rem 1rem;
-              border-radius: .5em;
-              cursor: pointer;
-              margin-bottom: 20px;
-              background-color: #fff;
+                box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+                padding: 1rem 1rem;
+                border-radius: .5em;
+                cursor: pointer;
+                margin-bottom: 20px;
+                background-color: #fff;
             `}>
               <Link
                 to={node.fields.slug}
