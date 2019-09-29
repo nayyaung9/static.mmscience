@@ -64,7 +64,7 @@ export default ({ data }) => {
 
 export const query = graphql `
 query {
-  allMarkdownRemark {
+  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Heat"}}}) {
     totalCount
     edges {
       node {
@@ -82,5 +82,4 @@ query {
     }
   }
 }
-
 `
