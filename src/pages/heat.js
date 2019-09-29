@@ -5,7 +5,6 @@ import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <div>
@@ -17,46 +16,43 @@ export default ({ data }) => {
         >  
           mmscience
         </h1>
-
         <h4>{data.allMarkdownRemark.totalCount} posts</h4>
 
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-
-            <div 
-              key={node.id}
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div 
+            key={node.id}
+            css={css`
+              box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+              padding: 1rem 1rem;
+              border-radius: .5em;
+              cursor: pointer;
+              margin-bottom: 20px;
+              background-color: #fff;
+          `}>
+            <Link
+              to={node.fields.slug}
               css={css`
-                box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
-                padding: 1rem 1rem;
-                border-radius: .5em;
-                cursor: pointer;
-                margin-bottom: 20px;
-                background-color: #fff;
+                text-decoration: none;
+                color: inherit;
             `}>
-              <Link
-                to={node.fields.slug}
+              <h3
                 css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
-                <h3
+                  margin-bottom: ${rhythm(1 / 4)};
+              `}> 
+                {node.frontmatter.title}{" "} <br />
+                <span
                   css={css`
-                    margin-bottom: ${rhythm(1 / 4)};
+                    color: #bbb;
                   `}
-                > 
-                  {node.frontmatter.title}{" "} <br />
-                  <span
-                    css={css`
-                      color: #bbb;
-                    `}
-                  >
-                    {node.frontmatter.date} {node.frontmatter.tags} 
-                  </span>
-                </h3>
-                <p>{node.excerpt}</p>
-              </Link>
-            </div>
-          ))}
+                >
+                  {node.frontmatter.date} {node.frontmatter.tags} 
+                </span>
+              </h3>
+              <p>{node.excerpt}</p>
+            </Link>
+          </div>
+        ))}
+        
       </div>
     </Layout>
   )

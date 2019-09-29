@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
+import { css } from '@emotion/core'
 
 // Components
 import { Helmet } from "react-helmet"
@@ -21,15 +22,24 @@ const TagsPage = ({
     <Helmet title={title} />
     <div>
       <h1>Tags</h1>
-      <ul>
+  
         {group.map(tag => (
-          <li key={tag.fieldValue}>
+            <div 
+              key={tag.fieldValue}
+              css={css`
+              box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+              padding: 1rem 1rem;
+              border-radius: .5em;
+              cursor: pointer;
+              margin-bottom: 20px;
+              background-color: #fff;
+          `}>
             <Link to={`/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
+            </Link>      
+          </div>
         ))}
-      </ul>
+  
     </div>
   </Layout>
 )
