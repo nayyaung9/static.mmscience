@@ -20,3 +20,24 @@ body {
 .content__header {
   font-family: 'Rubik', 'Pyidaungsu', sans-serif;
 }
+
+.global__space {
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  padding: 1rem 1rem;
+  border-radius: .5em;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+a.nav-link:hover {
+  cursor: pointer;
+}
+.nav-tabs, .nav-link {
+  border: 0 !important;
+}
+.nav-link.active {
+  background-color: #1ca086 !important;
+  color: #fff !important;
+  border-radius: 0.25rem;
+}
