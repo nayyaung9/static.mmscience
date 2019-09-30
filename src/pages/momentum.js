@@ -5,14 +5,15 @@ import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
 
 export default ({ data }) => {
+  console.log(data)
   return (
     <Layout>
       
-      <h4>{data.allMarkdownRemark.totalCount} posts</h4>
+        <h4>{data.allMarkdownRemark.totalCount} posts</h4>
 
-      <div className="row">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div class="col-md-4 col-6">
+        <div className="row">
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <div class="col-md-4">
             <div 
               key={node.id}
               css={css`
@@ -57,7 +58,7 @@ export default ({ data }) => {
 
 export const query = graphql `
 query {
-  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Mechanics"}}}) {
+  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Momentum"}}}) {
     totalCount
     edges {
       node {

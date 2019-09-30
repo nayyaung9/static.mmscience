@@ -8,7 +8,7 @@ export default () => (
   <Layout>
     
     <span>view courses 
-      <Link to='discover'>
+      <Link to='/discover/'>
         courses
       </Link>
     </span>

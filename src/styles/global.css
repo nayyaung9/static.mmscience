@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://mmwebfonts.comquas.com/fonts/?font=pyidaungsu');
+
+body {
+  font-family: 'Rubik', 'Pyidaungsu', sans-serif;
+}
+
+.article {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  border-radius: .5em;
+}
+.article__content {
+  padding: 1rem 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    /* padding: 0 !important; */
+  }
+}

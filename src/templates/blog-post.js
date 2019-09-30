@@ -2,17 +2,26 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
+import '../styles/global.css'
 
 export default ({data}) => {
   const post = data.markdownRemark
   let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   return (
     <Layout>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <Img fluid={featuredImgFluid} width="100%"/>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className="row">
+        <div className="col-md-8">
+          <div className="article">
+            <Img fluid={featuredImgFluid}/>
+            <div className="article__content">
+              <h1>{post.frontmatter.title}</h1>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4"></div>
       </div>
+  
     </Layout>
   )
 }
