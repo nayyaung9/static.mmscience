@@ -32,6 +32,7 @@ export const query = graphql `
       html
       frontmatter {
         title
+        tags
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {

@@ -13,8 +13,10 @@ body {
   padding: 1rem 1rem;
 }
 
-@media screen and (max-width: 700px) {
-  .container {
-    /* padding: 0 !important; */
-  }
+.content__spaces {
+  padding: 1rem 1rem;
+}
+
+.content__header {
+  font-family: 'Rubik', 'Pyidaungsu', sans-serif;
 }
