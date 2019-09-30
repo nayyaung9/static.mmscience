@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
+import { Helmet } from "react-helmet"
 import Layout from '../components/layout'
 import { Badge } from 'reactstrap';
 import Img from 'gatsby-image'
@@ -9,7 +10,7 @@ import '../styles/global.css'
 export default ({ data }) => {
   return (
     <Layout>
-      
+      <Helmet title={data.site.siteMetadata.title} />
       <h4>{data.allMarkdownRemark.totalCount} posts</h4>
 
       <div className="row">
@@ -52,6 +53,11 @@ export default ({ data }) => {
 
 export const query = graphql `
 query {
+  site {
+    siteMetadata {
+      title
+    }
+  }
   allMarkdownRemark {
     totalCount
     edges {
