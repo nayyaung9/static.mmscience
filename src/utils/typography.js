@@ -5,3 +5,4 @@ const typography = new Typography(kirkhamTheme)
 
 export default typography
 export const rhythm = typography.rhythm
+

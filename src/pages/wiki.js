@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from '../components/layout'
+import { Badge } from 'reactstrap';
 import Img from 'gatsby-image'
 import '../styles/global.css'
 
@@ -14,7 +15,7 @@ export default ({ data }) => {
       <div className="row">
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div class="col-md-4 col-6">
+          <div class="col-md-4">
             <div 
               key={node.id}
               css={css`
@@ -32,13 +33,12 @@ export default ({ data }) => {
                     text-decoration: none;
                     color: inherit;
                 `}>
-                  <h3 className="content__header"> 
-                    {node.frontmatter.title}{" "} <br />
-                    <span>
-                      {node.frontmatter.date} {node.frontmatter.tags} 
-                    </span>
-                  </h3>
+                  <h5 className="content__header"> 
+                    {node.frontmatter.title}
+                  </h5>
+                  <Badge color="success">{node.frontmatter.tags}</Badge>
                   <p>{node.excerpt}</p>
+                  <span>{node.frontmatter.date}</span>
                 </Link>
               </div>
             </div>
