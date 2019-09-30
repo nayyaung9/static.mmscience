@@ -3,21 +3,17 @@ import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
-import Img from 'gatsby-image'
-import { Helmet } from "react-helmet"
 
 export default ({ data }) => {
+  console.log(data)
   return (
     <Layout>
+      
+        <h4>{data.allMarkdownRemark.totalCount} posts</h4>
 
-      <Helmet title={data.site.siteMetadata.title} />
-
-      <h4>{data.allMarkdownRemark.totalCount} posts</h4>
-
-      <div className="row">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-        
-          <div class="col-md-4 col-6">
+        <div className="row">
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <div class="col-md-4">
             <div 
               key={node.id}
               css={css`
@@ -27,23 +23,26 @@ export default ({ data }) => {
                 cursor: pointer;
                 margin-bottom: 20px;
                 background-color: #fff;
+                height: 200px;
             `}>
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} width="100%"/>
               <Link
                 to={node.fields.slug}
                 css={css`
                   text-decoration: none;
                   color: inherit;
-                `}>
+                `}
+              >
                 <h3
                   css={css`
                     margin-bottom: ${rhythm(1 / 4)};
-                `}> 
+                  `}
+                > 
                   {node.frontmatter.title}{" "} <br />
-                <span
-                  css={css`
-                    color: #bbb;
-                  `}>
+                  <span
+                    css={css`
+                      color: #bbb;
+                    `}
+                  >
                     {node.frontmatter.date} {node.frontmatter.tags} 
                   </span>
                 </h3>
@@ -59,12 +58,7 @@ export default ({ data }) => {
 
 export const query = graphql `
 query {
-  site {
-    siteMetadata {
-      title
-    }
-  }
-  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Mechanics"}}}) {
+  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Motion"}}}) {
     totalCount
     edges {
       node {
@@ -73,13 +67,6 @@ query {
           title
           date(formatString: "DD MMMM, YYYY")
           tags
-          featuredImage {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
         fields {
           slug

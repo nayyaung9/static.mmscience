@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
+import { Helmet } from "react-helmet"
 import '../styles/global.css'
 
 export default ({data}) => {
@@ -9,6 +10,7 @@ export default ({data}) => {
   let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   return (
     <Layout>
+      <Helmet title={`MM Science | ${post.frontmatter.title}`} />
       <div className="row">
         <div className="col-md-8">
           <div className="article">
@@ -21,7 +23,6 @@ export default ({data}) => {
         </div>
         <div className="col-md-4"></div>
       </div>
-  
     </Layout>
   )
 }
