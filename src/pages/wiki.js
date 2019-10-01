@@ -16,7 +16,7 @@ export default ({ data }) => {
       <div className="row">
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div class="col-md-4">
+          <div className="col-md-4">
             <div 
               key={node.id}
               css={css`
@@ -26,7 +26,7 @@ export default ({ data }) => {
                 margin-bottom: 20px;
                 background-color: #fff;
             `}>
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} width="100%"/>
+              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid}/>
               <div className="content__spaces">
                 <Link
                   to={node.fields.slug}

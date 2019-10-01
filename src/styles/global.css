@@ -10,7 +10,7 @@ body {
   border-radius: .5em;
 }
 .article__content {
-  padding: 1rem 1rem;
+  padding: 1rem .5rem;
 }
 
 .content__spaces {
@@ -40,4 +40,28 @@ a.nav-link:hover {
   background-color: #1ca086 !important;
   color: #fff !important;
   border-radius: 0.25rem;
+}
+
+.article_role_play {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+}
+.author__pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+.article__profile {
+  margin-left: 12px;
+}
+.article__name {
+  display: block;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 700px) {
+  .singal_content {
+    padding: 0 !important;
+  }
 }

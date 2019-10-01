@@ -50,7 +50,7 @@ export default class Example extends React.Component {
      
               {this.props.tags.map(tag => (
                 <div className="col-md-4" key={tag.fieldValue} style={{ marginTop: '20px' }}>
-                           <div className="global__space" key={tag.fieldValue}>
+                  <div className="global__space" key={tag.fieldValue}>
                   <Link 
                     to={`/${kebabCase(tag.fieldValue)}/`}
                     css={css`
