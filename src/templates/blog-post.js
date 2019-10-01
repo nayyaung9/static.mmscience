@@ -12,6 +12,7 @@ export default ({data}) => {
     <Layout>
       <Helmet title={`MM Science | ${post.frontmatter.title}`} />
       <div className="row">
+        <div className="col-md-2"></div>
         <div className="col-md-8">
           <div className="article">
             <Img fluid={featuredImgFluid}/>
@@ -21,7 +22,7 @@ export default ({data}) => {
             </div>
           </div>
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-2"></div>
       </div>
     </Layout>
   )

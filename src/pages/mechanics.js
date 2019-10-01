@@ -50,8 +50,8 @@ export default ({ data }) => {
                 <p>{node.excerpt}</p>
               </Link>
             </div>
-            </div>
-          ))}
+          </div>
+        ))}
      </div>
     </Layout>
   )

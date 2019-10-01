@@ -1,9 +1,8 @@
 ---
-path: "/what-is-acceleration"
-title: "Sweet Pandas Eating Sweets"
+title: "အရှိန်"
 date: "2017-08-10"
 tags: ['Mechanics']
-featuredImage: './images/acceleration0.jpg'
+featuredImage: '../images/acceleration0.jpg'
 ---
 
 Pandas are really sweet.

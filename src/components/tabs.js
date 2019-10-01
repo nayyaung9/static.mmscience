@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Progress } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Progress } from 'reactstrap';
 import classnames from 'classnames';
 import { Link } from "gatsby"
 import kebabCase from "lodash/kebabCase"
