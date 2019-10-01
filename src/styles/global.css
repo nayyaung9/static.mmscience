@@ -59,9 +59,18 @@ a.nav-link:hover {
   display: block;
   font-weight: 700;
 }
-
+.article__meta {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 300;
+  font-size: inherit;
+}
 @media screen and (max-width: 700px) {
   .singal_content {
     padding: 0 !important;
   }
+}
+
+.content__image {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  border-radius: .25rem;
 }

@@ -7,8 +7,10 @@ import '../styles/global.css'
 import Author from '../assets/mmscience.jpg'
 
 export default ({data}) => {
+
   const post = data.markdownRemark
   let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+
   return (
     <Layout>
 
@@ -26,7 +28,11 @@ export default ({data}) => {
                 </div>
                 <div className="article__profile">
                   <span className="article__name">MM Science</span>
-                  <span>{post.frontmatter.date}</span>
+                  <div>
+                    <span className="article__meta"> 
+                      {post.frontmatter.date} · {post.timeToRead} min read 
+                    </span>
+                  </div>
                 </div>
               </div>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -35,8 +41,8 @@ export default ({data}) => {
         </div>
         <div className="col-md-2"></div>
       </div>
-    </Layout>
 
+    </Layout>
   )
 }
 
@@ -47,7 +53,7 @@ export const query = graphql `
       frontmatter {
         title
         tags
-        date
+        date(formatString: "MMM DD")
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {
@@ -56,6 +62,7 @@ export const query = graphql `
           }
         }
       }
+      timeToRead
     }
   }
 `

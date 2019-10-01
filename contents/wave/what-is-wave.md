@@ -1,6 +1,6 @@
 ---
 title: "What is wave?"
-date: "2017-08-10"
+date: "2019-11-25"
 tags: ['wave']
 featuredImage: '../images/wave.jpeg'
 ---
