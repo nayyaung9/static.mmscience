@@ -43,15 +43,16 @@ export default ({ data }) => {
                   <h5 className="content__header"> 
                     {node.frontmatter.title}
                   </h5>
-                  <span className="article__meta"> 
-                    {node.frontmatter.date} · {node.timeToRead} min read 
-                  </span>
-                  <p>{node.excerpt}</p>
-                </Link>
+                </Link> 
+
                 { node.frontmatter.tags.length > 1 
                   ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
                   : <Badge color="success">{node.frontmatter.tags}</Badge>
-                }
+                } <br />
+                <span className="article__meta"> 
+                  {node.frontmatter.date} · {node.timeToRead} min read 
+                </span>
+             
               </div>
             </div>
           </div>

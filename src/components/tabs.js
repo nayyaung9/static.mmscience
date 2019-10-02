@@ -57,9 +57,13 @@ export default class Example extends React.Component {
                       color: #1ca086;
                       text-decoration: none;
                   `}>
-           
-                      <b>{tag.fieldValue}</b> <br />
-                      <Progress color="success" value={tag.totalCount + 5} />
+                    <b>{tag.fieldValue}</b> <br />
+
+                    <Progress multi>
+                      <Progress animated bar color="success" value={tag.totalCount + 10} />
+                    </Progress>
+                      
+                     
                  
                   </Link>    
                   </div>

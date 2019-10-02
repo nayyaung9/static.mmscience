@@ -45,7 +45,6 @@ export default ({ data }) => {
                   <span className="article__meta"> 
                     {node.frontmatter.date} · {node.timeToRead} min read 
                   </span>
-                  <p>{node.excerpt}</p>
                 </Link>
                 { node.frontmatter.tags.length > 1 
                   ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
