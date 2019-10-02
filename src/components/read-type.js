@@ -26,6 +26,10 @@ export default class Example extends React.Component {
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem>
+            <Link to='/wiki/'>feed</Link>
+          </DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>
             <Link to='/wiki/new'>Recently published</Link>
           </DropdownItem>
           <DropdownItem divider />
