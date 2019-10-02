@@ -7,7 +7,27 @@ import { Badge } from 'reactstrap';
 import Img from 'gatsby-image'
 import '../styles/global.css'
 
+
+const renderAllTags = (tags) => {
+  console.log(tags.length)
+
+  tags.forEach((item, index) => {
+    console.log(item, index.length)
+  })
+
+  for(var i=0; i <tags.length; i++) {
+    return 
+  }
+  // for(let tag of tags) {
+    
+  //     return <Badge color="success">{tag.length}</Badge>
+    
+  // }
+}
+
+
 export default ({ data }) => {
+
   return (
     <Layout>
       <Helmet title={data.site.siteMetadata.title} />
@@ -16,9 +36,8 @@ export default ({ data }) => {
       <div className="row">
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="col-md-4">
+          <div className="col-md-4" key={node.id}>
             <div 
-              key={node.id}
               css={css`
                 box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
                 border-radius: .25rem;
@@ -37,11 +56,14 @@ export default ({ data }) => {
                   <h5 className="content__header"> 
                     {node.frontmatter.title}
                   </h5>
-                  <Badge color="success">{node.frontmatter.tags}</Badge>
+                  <span className="article__meta"> 
+                    {node.frontmatter.date} · {node.timeToRead} min read 
+                  </span>
                   <p>{node.excerpt}</p>
-                  <span>{node.frontmatter.date}</span> <br />
-                  <span>{node.timeToRead}</span>
                 </Link>
+                { node.frontmatter.tags.length > 1 
+                  ? renderAllTags(node.frontmatter.tags)
+                  : <Badge color="success">{node.frontmatter.tags}</Badge>}
               </div>
             </div>
           </div>
@@ -66,7 +88,7 @@ query {
         id
         frontmatter {
           title
-          date(formatString: "DD MMMM, YYYY")
+          date(formatString: "DD MMM, YYYY")
           tags
           featuredImage {
             childImageSharp {
