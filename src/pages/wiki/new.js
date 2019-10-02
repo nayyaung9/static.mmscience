@@ -2,22 +2,22 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { Helmet } from "react-helmet"
-import Layout from '../components/layout'
-import ReadType from '../components/read-type'
+import Layout from '../../components/layout'
+import ReadType from '../../components/read-type'
 import { Badge } from 'reactstrap';
 import Img from 'gatsby-image'
-import '../styles/global.css'
+import '../../styles/global.css'
 
 export default ({ data }) => {
+
   return (
     <Layout>
       <Helmet title={data.site.siteMetadata.title} />
       <h4>{data.allMarkdownRemark.totalCount} posts</h4>
 
       <div className="reading_type_style">
-        <ReadType type="select reading style"/>
+        <ReadType type="Recently Update"/>
       </div>
-      
 
       <div className="row">
 
@@ -68,7 +68,7 @@ query {
       title
     }
   }
-  allMarkdownRemark {
+  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
     totalCount
     edges {
       node {
