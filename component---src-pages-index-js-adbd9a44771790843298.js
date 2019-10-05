@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{251:function(e,n,c){"use strict";c.r(n);var s=c(3),a=(c(0),c(245)),o=c(246);n.default=function(){return Object(s.a)(o.a,null,Object(s.a)("span",null,"view courses",Object(s.a)(a.a,{to:"/discover/"},"courses")))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-adbd9a44771790843298.js.map

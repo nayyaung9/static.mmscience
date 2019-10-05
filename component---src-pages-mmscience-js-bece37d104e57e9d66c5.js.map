@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/mmscience.js"],"names":[],"mappings":"4HAGe,4BAEX,YAAC,IAAD,KACE","file":"component---src-pages-mmscience-js-bece37d104e57e9d66c5.js","sourcesContent":["import React from 'react'\nimport Layout from '../components/layout'\n\nexport default () => (\n  \n    <Layout>\n      <h1>MM Science</h1>\n    </Layout>\n  \n)"],"sourceRoot":""}
