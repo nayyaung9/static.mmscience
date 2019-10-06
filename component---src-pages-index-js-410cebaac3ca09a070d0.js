@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{234:function(e,c,n){"use strict";n.r(c);var s=n(3),o=(n(1),n(120)),t=n(230);c.default=function(){return Object(s.b)(t.a,null,Object(s.b)("span",null,"view courses",Object(s.b)(o.a,{to:"/mmscience/discover/"},"courses")))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-410cebaac3ca09a070d0.js.map

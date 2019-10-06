@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{254:function(n,c,e){"use strict";e.r(c);var t=e(3),u=(e(0),e(246));c.default=function(){return Object(t.a)(u.a,null,Object(t.a)("h1",null,"MM Science"))}}}]);
-//# sourceMappingURL=component---src-pages-mmscience-js-bece37d104e57e9d66c5.js.map
