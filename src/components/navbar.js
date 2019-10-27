@@ -16,7 +16,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
+import Button from '@material-ui/core/Button';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
+import LabelIcon from '@material-ui/icons/Label';
 import { Link } from 'gatsby';
 import '../styles/global.css';
 
@@ -31,6 +33,9 @@ const useStyles = makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+  },
+  title: {
+    flexGrow: 1,
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -112,9 +117,14 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            MM Science
+          <Typography variant="h6" noWrap className={classes.title}>
+            <Link to='/'>MM Science</Link>
           </Typography>
+          <Button color="inherit">
+            <Link to='/mmscience'>
+              About
+            </Link>
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -139,10 +149,16 @@ export default function PersistentDrawerLeft() {
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          <Link to='/wiki'>
+          <Link to='/wiki/'>
             <ListItem button>
               <ListItemIcon> <DynamicFeedIcon /> </ListItemIcon>
               <ListItemText primary="Wiki" />
+            </ListItem>
+          </Link>
+          <Link to='/discover/'>
+            <ListItem button>
+              <ListItemIcon> <LabelIcon /> </ListItemIcon>
+              <ListItemText primary="Discover" />
             </ListItem>
           </Link>
         </List>

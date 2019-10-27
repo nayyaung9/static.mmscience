@@ -90,7 +90,7 @@ a.nav-link:hover {
 }
 
 @media screen and (max-width: 700px) {
-  .singal_content, .wiki__article {
+  .singal_content {
     padding: 0 !important;
   }
   .blog__post__list {
@@ -101,7 +101,7 @@ a.nav-link:hover {
   }
   .content__image {
     box-shadow: none;
-    border-radius: 0;
+    border-radius: 20px;
   }
 }
 
