@@ -23,7 +23,7 @@ export default ({data}) => {
         <div className="col-md-2"></div>
         <div className="col-md-8 singal_content">
           <div className="article">
-            <Img fluid={featuredImgFluid} loading="eager" />
+            <Img fluid={featuredImgFluid} loading="lazy" />
             <div className="article__content">
               <h2>{post.frontmatter.title}</h2>
               <div className="article_role_play">
@@ -100,7 +100,7 @@ export const query = graphql `
         date(formatString: "MMM DD")
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
               src
             }

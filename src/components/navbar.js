@@ -129,13 +129,13 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
 
-      <Link href={'/mmscience/discover/'} color="inherit">
+      <Link href={'/discover/'} color="inherit">
         <MenuItem>
           Discover
         </MenuItem>
       </Link>
       
-      <Link href={'/mmscience/wiki/'} color="inherit">
+      <Link href={'/wiki/'} color="inherit">
         <MenuItem>
           Wiki
         </MenuItem>
