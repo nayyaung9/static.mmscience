@@ -23,7 +23,7 @@ export default ({data}) => {
         <div className="col-md-2"></div>
         <div className="col-md-8 singal_content">
           <div className="article">
-            <Img fluid={featuredImgFluid}/>
+            <Img fluid={featuredImgFluid} loading="eager" />
             <div className="article__content">
               <h2>{post.frontmatter.title}</h2>
               <div className="article_role_play">
@@ -46,7 +46,7 @@ export default ({data}) => {
         <div className="col-md-2"></div>
       </div>
 
-      <div className="other_stories">
+      {/* <div className="other_stories">
         <div className="row">
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <div className="col-md-4" key={node.id}>
@@ -84,7 +84,7 @@ export default ({data}) => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
     </Layout>
   )
@@ -100,8 +100,9 @@ export const query = graphql `
         date(formatString: "MMM DD")
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
+              src
             }
           }
         }

@@ -12,7 +12,6 @@ export default ({ data }) => {
   return (
     <Layout>
       <Helmet title={data.site.siteMetadata.title} />
-      <h4>{data.allMarkdownRemark.totalCount} posts</h4>
 
       <div className="reading_type_style">
         <ReadType type="select reading style"/>
@@ -22,15 +21,8 @@ export default ({ data }) => {
       <div className="row">
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="col-md-4" key={node.id}>
-            <div 
-              css={css`
-                box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                border-radius: .25rem;
-                cursor: pointer;
-                margin-bottom: 20px;
-                background-color: #fff;
-            `}>
+          <div className="col-md-4 wiki__article" key={node.id}>
+            <div className="blog__post__list">
               <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} className="content__image"/>
               <div className="content__spaces">
                 <Link
@@ -44,10 +36,10 @@ export default ({ data }) => {
                   </h5>
                   <span className="article__meta"> 
                     {node.frontmatter.date} · {node.timeToRead} min read 
-                  </span>
+                  </span> <br />
                 </Link>
                 { node.frontmatter.tags.length > 1 
-                  ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
+                  ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>  
                   : <Badge color="success">{node.frontmatter.tags}</Badge>
                 }
               </div>

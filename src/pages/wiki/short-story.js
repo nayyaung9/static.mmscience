@@ -23,15 +23,8 @@ export default ({ data }) => {
       <div className="row">
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="col-md-4" key={node.id}>
-            <div 
-              css={css`
-                box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                border-radius: .25rem;
-                cursor: pointer;
-                margin-bottom: 20px;
-                background-color: #fff;
-            `}>
+          <div className="col-md-4 wiki__article" key={node.id}>
+            <div className="blog__post__list">
               <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} className="content__image"/>
               <div className="content__spaces">
                 <Link

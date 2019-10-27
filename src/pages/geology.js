@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
 
 export default ({ data }) => {
@@ -32,11 +31,7 @@ export default ({ data }) => {
                   color: inherit;
                 `}
               >
-                <h3
-                  css={css`
-                    margin-bottom: ${rhythm(1 / 4)};
-                  `}
-                > 
+                <h3> 
                   {node.frontmatter.title}{" "} <br />
                   <span
                     css={css`
@@ -58,7 +53,7 @@ export default ({ data }) => {
 
 export const query = graphql `
 query {
-  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Momentum"}}}) {
+  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Geology"}}}) {
     totalCount
     edges {
       node {

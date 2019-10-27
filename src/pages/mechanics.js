@@ -16,17 +16,9 @@ export default ({ data }) => {
 
       <div className="row">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="col-md-4">
-             <div 
-              key={node.id}
-              css={css`
-                box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                border-radius: .5em;
-                cursor: pointer;
-                margin-bottom: 20px;
-                background-color: #fff;
-            `}>
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} width="100%"/>
+          <div className="col-md-4 wiki__article">
+             <div key={node.id} className="blog__post__list">
+              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
               <div className="content__spaces">
                 <Link
                   to={node.fields.slug}
@@ -37,8 +29,7 @@ export default ({ data }) => {
                   <h5 className="content__header"> 
                     {node.frontmatter.title}
                   </h5>
-                  <Badge color="success">{node.frontmatter.tags}</Badge>
-                  <p>{node.excerpt}</p>
+                  <Badge color="success">{node.frontmatter.tags}</Badge> <br />
                   <span>{node.frontmatter.date}</span>
                 </Link>
               </div>

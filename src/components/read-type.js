@@ -1,43 +1,43 @@
 import React from 'react';
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { Link } from 'gatsby'
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormatLineSpacingIcon from '@material-ui/icons/FormatLineSpacing';
+import { Link } from 'gatsby';
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
+export default function SimpleMenu() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      dropdownOpen: false
-    };
-  }
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
 
-  toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    });
-  }
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-  render() {
-    return (
-      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret color="success">
-          {this.props.type}
-        </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem>
-            <Link to='/wiki/'>feed</Link>
-          </DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>
-            <Link to='/wiki/new'>Recently published</Link>
-          </DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>
-            <Link to='/wiki/short-story'>Shortest time to read</Link>
-          </DropdownItem>
-        </DropdownMenu>
-      </ButtonDropdown>
-    );
-  }
+  return (
+    <div>
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} variant="contained" color="primary">
+        <FormatLineSpacingIcon />
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>
+          <Link to='/wiki/'>feed</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to='/wiki/new'>Recently published</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to='/wiki/short-story'>Shortest time to read</Link>
+        </MenuItem>
+      </Menu>
+    </div>
+  );
 }

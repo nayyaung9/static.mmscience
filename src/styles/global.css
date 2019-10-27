@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 @import url('https://mmwebfonts.comquas.com/fonts/?font=pyidaungsu');
-
+a:hover {
+  text-decoration: none !important;
+}
 body {
   font-family: 'Rubik', 'Pyidaungsu', sans-serif;
 }
 
 .article {
-  /* box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); */
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   border-radius: .5em;
+}
+@media screen and (max-width: 900px) {
+  .article {
+   box-shadow: none !important;
+  }
 }
 .article__content {
   padding: 1rem .5rem;
@@ -28,6 +35,14 @@ body {
   cursor: pointer;
   margin-bottom: 20px;
   background-color: white;
+}
+
+.blog__post__list {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  border-radius: .25rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 a.nav-link:hover {
@@ -64,16 +79,28 @@ a.nav-link:hover {
   font-weight: 300;
   font-size: inherit;
 }
-@media screen and (max-width: 700px) {
-  .singal_content {
-    padding: 0 !important;
-  }
-}
 
 .content__image {
   box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
   border-radius: .25rem;
 }
+
+@media screen and (max-width: 700px) {
+  .singal_content, .wiki__article {
+    padding: 0 !important;
+  }
+  .blog__post__list {
+    box-shadow: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  .content__image {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
 
 .reading_type_style {
   margin: 20px auto;

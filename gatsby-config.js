@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/mmscience",
   siteMetadata: {
     title: `MM Science`,
   },
@@ -14,11 +15,5 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
   ],
 }
