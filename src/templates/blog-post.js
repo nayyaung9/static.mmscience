@@ -46,7 +46,7 @@ export default ({data}) => {
         <div className="col-md-2"></div>
       </div>
 
-      {/* <div className="other_stories">
+      <div className="other_stories">
         <div className="row">
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <div className="col-md-4" key={node.id}>
@@ -84,7 +84,7 @@ export default ({data}) => {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
 
     </Layout>
   )
@@ -109,7 +109,7 @@ export const query = graphql `
       }
       timeToRead
     }
-    allMarkdownRemark(limit: 3) {
+    allMarkdownRemark(limit: 3, sort: {order: DESC, fields: frontmatter___tags}) {
       totalCount
       edges {
         node {

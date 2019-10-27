@@ -1,11 +1,12 @@
-import React from "react"
-import Navbar from './navbar'
+import React from 'react';
+import Navbar from './navbar';
 
 export default ({ children }) => (
   <div>
     <Navbar/>
     <div className="container">
-      <main style={{ margin: '80px auto' }}>
+     
+      <main>
         {children}
       </main>
     </div>
