@@ -16,7 +16,7 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <Helmet title={title} />
+    <Helmet title={title + " | Discover"} />
 
     <h1>Discover</h1>
 
