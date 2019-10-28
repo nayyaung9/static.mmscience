@@ -19,6 +19,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import Button from '@material-ui/core/Button';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import LabelIcon from '@material-ui/icons/Label';
+import HelpIcon from '@material-ui/icons/Help';
 import { Link } from 'gatsby';
 import '../styles/global.css';
 
@@ -163,6 +164,14 @@ export default function PersistentDrawerLeft() {
           </Link>
         </List>
         <Divider />
+        <List>
+          <Link to='/help/'>
+            <ListItem button>
+              <ListItemIcon> <HelpIcon /> </ListItemIcon>
+              <ListItemText primary="How to use it" />
+            </ListItem>
+          </Link>
+        </List>
       </Drawer>
       {/* <main
         className={clsx(classes.content, {
