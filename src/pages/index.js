@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid'
 
 import TagBar from '../components/discover'
 import Layout from '../components/layout'
+import HomePage from '../components/home'
 
 export default ({ data }) => (
   <Layout>
@@ -92,6 +93,8 @@ export default ({ data }) => (
          
       ))}
     </Grid>
+
+    <HomePage />
   </Layout>
 );
 
