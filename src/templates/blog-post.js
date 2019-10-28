@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import { Badge } from 'reactstrap';
 import { Helmet } from "react-helmet"
 import Img from 'gatsby-image'
+import Typography from '@material-ui/core/Typography';
 
 import Layout from "../components/layout"
 import Author from '../assets/mmscience.jpg'
@@ -46,43 +47,42 @@ export default ({data}) => {
         <div className="col-md-2"></div>
       </div>
 
+      <Typography variant="body2">
+        Awesome articles
+      </Typography>
       <div className="other_stories">
         <div className="row">
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <div className="col-md-4" key={node.id}>
-              <div 
-                css={css`
-                  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-                  border-radius: .25rem;
-                  cursor: pointer;
-                  margin-bottom: 20px;
-                  background-color: #fff;
-              `}>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div className="col-md-4 wiki__article" key={node.id}>
+            <div className="blog__post__list">
+              <div className="featured__image">
                 <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} className="content__image"/>
-                <div className="content__spaces">
-                  <Link
-                    to={node.fields.slug}
-                    css={css`
-                      text-decoration: none;
-                      color: inherit;
-                  `}>
-                    <h5 className="content__header"> 
-                      {node.frontmatter.title}
-                    </h5>
-                  </Link> 
-
-                  { node.frontmatter.tags.length > 1 
-                    ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
-                    : <Badge color="success">{node.frontmatter.tags}</Badge>
-                  } <br />
-                  <span className="article__meta"> 
+              </div>
+              <div className="content__spaces">
+                <Link
+                  to={node.fields.slug}
+                  css={css`
+                    text-decoration: none;
+                    color: inherit;
+                `}>
+                  <h5 className="content__header"> 
+                    {node.frontmatter.title}
+                  </h5>
+                  <Typography paragraph style={{ margin: '0'}}>{node.excerpt}</Typography>
+                </Link>
+                 <div className="article__label"> 
+                    { node.frontmatter.tags.length > 1 
+                      ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
+                      : <Badge color="success">{node.frontmatter.tags}</Badge>
+                    }
+                  </div>
+                 <span className="article__meta"> 
                     {node.frontmatter.date} · {node.timeToRead} min read 
                   </span>
-              
-                </div>
               </div>
             </div>
-          ))}
+          </div>
+        ))}
         </div>
       </div>
 

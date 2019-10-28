@@ -152,7 +152,7 @@ export default function PersistentDrawerLeft() {
           <Link to='/wiki/'>
             <ListItem button>
               <ListItemIcon> <DynamicFeedIcon /> </ListItemIcon>
-              <ListItemText primary="Wiki" />
+              <ListItemText primary="Feed" />
             </ListItem>
           </Link>
           <Link to='/discover/'>
@@ -164,13 +164,13 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider />
       </Drawer>
-      <main
+      {/* <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
       >
         <div className={classes.drawerHeader} />
-      </main>
+      </main> */}
     </div>
   );
 }

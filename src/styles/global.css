@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 @import url('https://mmwebfonts.comquas.com/fonts/?font=pyidaungsu');
+body {
+  background-color: #f8f6f6 !important;
+}
 a {
   color: #000;
 }
@@ -24,14 +27,6 @@ body {
   padding: 1rem .5rem;
 }
 
-.content__spaces {
-  padding: 1rem 1rem;
-}
-
-.content__header {
-  font-family: 'Rubik', 'Pyidaungsu', sans-serif;
-}
-
 .global__space {
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   padding: 1rem 1rem;
@@ -41,9 +36,9 @@ body {
   background-color: white;
 }
 
-.blog__post__list {
+.blog__post__items {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-  border-radius: .25rem;
+  border-radius: 20px;
   cursor: pointer;
   margin-bottom: 20px;
   background-color: #fff;
@@ -83,25 +78,24 @@ a.nav-link:hover {
   font-weight: 300;
   font-size: inherit;
 }
-
+.article__content {
+  background-color: #fff;
+}
 .content__image {
   box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
   border-radius: .25rem;
 }
 
 @media screen and (max-width: 700px) {
-  .singal_content {
+  .singal_content, .wiki__article {
     padding: 0 !important;
   }
-  .blog__post__list {
+  .blog__post__items {
     box-shadow: none;
+    border-radius: 20px;
     cursor: pointer;
     margin-bottom: 20px;
     background-color: #fff;
-  }
-  .content__image {
-    box-shadow: none;
-    border-radius: 20px;
   }
 }
 

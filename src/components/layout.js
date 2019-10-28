@@ -1,14 +1,17 @@
 import React from 'react';
 import Navbar from './navbar';
 
+// Material-ui
+import Container from '@material-ui/core/Container';
+
 export default ({ children }) => (
-  <div>
+  <React.Fragment>
     <Navbar/>
-    <div className="container">
-     
-      <main>
+
+    <Container maxWidth="md">
+      <main style={{ margin: '70px auto'}}>
         {children}
       </main>
-    </div>
-  </div>
-)
+    </Container>
+  </React.Fragment>
+);

@@ -7,6 +7,7 @@ import ReadType from '../components/read-type'
 import { Badge } from 'reactstrap';
 import Img from 'gatsby-image'
 import '../styles/global.css'
+import Typography from '@material-ui/core/Typography';
 
 export default ({ data }) => {
   return (
@@ -20,10 +21,12 @@ export default ({ data }) => {
 
       <div className="row">
 
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+      {data.allMarkdownRemark.edges.map(({ node }) => (
           <div className="col-md-4 wiki__article" key={node.id}>
             <div className="blog__post__list">
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} className="content__image"/>
+              <div className="featured__image">
+                <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} className="content__image"/>
+              </div>
               <div className="content__spaces">
                 <Link
                   to={node.fields.slug}
@@ -34,14 +37,17 @@ export default ({ data }) => {
                   <h5 className="content__header"> 
                     {node.frontmatter.title}
                   </h5>
-                  <span className="article__meta"> 
-                    {node.frontmatter.date} · {node.timeToRead} min read 
-                  </span> <br />
+                  <Typography paragraph style={{ margin: '0'}}>{node.excerpt}</Typography>
                 </Link>
-                { node.frontmatter.tags.length > 1 
-                  ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>  
-                  : <Badge color="success">{node.frontmatter.tags}</Badge>
-                }
+                 <div className="article__label"> 
+                    { node.frontmatter.tags.length > 1 
+                      ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
+                      : <Badge color="success">{node.frontmatter.tags}</Badge>
+                    }
+                  </div>
+                 <span className="article__meta"> 
+                    {node.frontmatter.date} · {node.timeToRead} min read 
+                  </span>
               </div>
             </div>
           </div>

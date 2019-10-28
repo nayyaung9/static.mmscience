@@ -1,52 +1,89 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import Layout from '../components/layout'
-import { Badge } from 'reactstrap';
+import { Badge } from 'reactstrap'
 import Img from 'gatsby-image'
-import { Helmet } from 'react-helmet';
-import Typography from '@material-ui/core/Typography';
+import { Helmet } from 'react-helmet'
 
-import TagBar from '../components/discover';
+import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
+
+import TagBar from '../components/discover'
+import Layout from '../components/layout'
 
 export default ({ data }) => (
   <Layout>
     <TagBar />
+    
     <Helmet title="MM Science | A Online Library website for Myanmar Education" />
+
     <Typography variant="h6">
       Feature articles
     </Typography>
-    <div className="row">
+    
+    <Grid container spacing={3}>
         
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="col-md-4 wiki__article" key={node.id}>
-            <div className="blog__post__list">
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} className="content__image"/>
-              <div className="content__spaces">
-                <Link
-                  to={node.fields.slug}
-                  css={css`
-                    text-decoration: none;
-                    color: inherit;
-                `}>
-                  <h5 className="content__header"> 
-                    {node.frontmatter.title}
-                  </h5>
-                  <span className="article__meta"> 
-                    {node.frontmatter.date} · {node.timeToRead} min read 
-                  </span>
-                </Link>
-                { node.frontmatter.tags.length > 1 
-                  ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
-                  : <Badge color="success">{node.frontmatter.tags}</Badge>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+          
+        <Grid item xs={12} sm={4} 
+          key={node.id} 
+          css={css`
+            @media screen and (max-width: 700px) {
+              padding: 0 !important;
+            }            
+        `}>
+          <div className="blog__post__items">
+            <div 
+              css={css`
+                @media screen and (max-width: 700px) {
+                  padding: 10px;
                 }
+              `}
+            >
+              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+              css={css`
+                @media screen and (max-width: 700px) {
+                  box-shadow: none;
+                  border-radius: 20px;
+                }
+              `}/>
+            </div>
+            <div 
+            css={css`
+              padding: 1rem 1rem;
+              background: #fff;
+              @media screen and (max-width: 700px) {
+                border-radius: 20px;
+              }
+            `}>
+              <Link
+                to={node.fields.slug}
+                css={css`
+                  text-decoration: none;
+                  color: inherit;
+              `}>
+                <Typography variant="body2" 
+                css={css`
+                  font-family: 'Rubik', 'Pyidaungsu', sans-serif;
+                `}> 
+                  {node.frontmatter.title}
+                </Typography>
+                <Typography paragraph style={{ margin: '0'}}>
+                  {node.excerpt}
+                </Typography>
+              </Link>
+              <div className="article__label"> 
+                <Badge color="success">{node.frontmatter.tags}</Badge>  
               </div>
+              <span className="article__meta"> 
+                {node.frontmatter.date} · {node.timeToRead} min read 
+              </span>
             </div>
           </div>
-        ))}
-      </div>
-
-     
+        </Grid>
+         
+      ))}
+    </Grid>
   </Layout>
 );
 
@@ -83,4 +120,4 @@ query {
     }
   }
 }
-`
+`;
