@@ -15,8 +15,11 @@ export default ({ data }) => (
   <Layout>
 
     {/* <TagBar tags={data.allMarkdownRemark.group}/> */}
-    
-    <Helmet title="MM Science | A Online Library website for Myanmar Education" />
+
+    <Helmet title="MM Science | A Online Library website for Myanmar Education" > */}
+      <meta name="description" content="A Online Library website for Myanmar Educatio" />
+      <meta name="image" content="/src/assets/mmscience0.jpg" />
+    </Helmet> 
 
     <div>
       <Typography variant="h6">
@@ -97,6 +100,9 @@ query {
   site {
     siteMetadata {
       title
+      description
+      image
+      url
     }
   }
   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 6) {

@@ -20,6 +20,7 @@ import Button from '@material-ui/core/Button';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import LabelIcon from '@material-ui/icons/Label';
 import HelpIcon from '@material-ui/icons/Help';
+import Switch from '@material-ui/core/Switch';
 import { Link } from 'gatsby';
 import '../styles/global.css';
 
@@ -171,6 +172,14 @@ export default function PersistentDrawerLeft() {
               <ListItemText primary="How to use it" />
             </ListItem>
           </Link>
+          <ListItem>
+            <Switch
+              value="mode"
+              color="primary"
+              inputProps={{ 'aria-label': 'primary checkbox' }}
+              label="night mode"
+            /> Night mode
+          </ListItem>
         </List>
       </Drawer>
       {/* <main
