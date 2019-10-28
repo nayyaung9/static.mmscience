@@ -8,6 +8,7 @@ import { Badge } from 'reactstrap';
 import Img from 'gatsby-image'
 import '../styles/global.css'
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 export default ({ data }) => {
   return (
@@ -19,41 +20,70 @@ export default ({ data }) => {
       </div>
       
 
-      <div className="row">
+      <Grid container spacing={3}>
 
       {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="col-md-4 wiki__article" key={node.id}>
-            <div className="blog__post__list">
-              <div className="featured__image">
-                <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} className="content__image"/>
+          
+          <Grid item xs={12} sm={4} 
+            key={node.id} 
+            css={css`
+              @media screen and (max-width: 700px) {
+                padding: 0 !important;
+              }            
+          `}>
+            <div className="blog__post__items">
+              <div 
+                css={css`
+                  @media screen and (max-width: 700px) {
+                    padding: 10px;
+                  }
+                `}
+              >
+                <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+                css={css`
+                  @media screen and (max-width: 700px) {
+                    box-shadow: none;
+                    border-radius: 20px;
+                  }
+                `}/>
               </div>
-              <div className="content__spaces">
+              <div 
+              css={css`
+                padding: 1rem 1rem;
+                background: #fff;
+                @media screen and (max-width: 700px) {
+                  border-radius: 20px;
+                }
+              `}>
                 <Link
                   to={node.fields.slug}
                   css={css`
                     text-decoration: none;
                     color: inherit;
                 `}>
-                  <h5 className="content__header"> 
+                  <Typography variant="body2" 
+                  css={css`
+                    font-family: 'Rubik', 'Pyidaungsu', sans-serif;
+                  `}> 
                     {node.frontmatter.title}
-                  </h5>
-                  <Typography paragraph style={{ margin: '0'}}>{node.excerpt}</Typography>
+                  </Typography>
+                  <Typography paragraph style={{ margin: '0'}}>
+                    {node.excerpt}
+                  </Typography>
                 </Link>
-                 <div className="article__label"> 
-                    { node.frontmatter.tags.length > 1 
-                      ? <Badge color="success">{node.frontmatter.tags.join(' ')}</Badge>
-                      : <Badge color="success">{node.frontmatter.tags}</Badge>
-                    }
-                  </div>
-                 <span className="article__meta"> 
-                    {node.frontmatter.date} · {node.timeToRead} min read 
-                  </span>
+                <div className="article__label"> 
+                  <Badge color="success">{node.frontmatter.tags}</Badge>  
+                </div>
+                <span className="article__meta"> 
+                  {node.frontmatter.date} · {node.timeToRead} min read 
+                </span>
               </div>
             </div>
-          </div>
+          </Grid>
+           
         ))}
 
-     </div>
+     </Grid>
     </Layout>
   )
 }
