@@ -13,15 +13,21 @@ import Layout from '../components/layout'
 
 export default ({ data }) => (
   <Layout>
-    <TagBar />
+
+    {/* <TagBar tags={data.allMarkdownRemark.group}/> */}
     
     <Helmet title="MM Science | A Online Library website for Myanmar Education" />
 
-    <Typography variant="h6">
-      Feature articles
-    </Typography>
+    <div>
+      <Typography variant="h6">
+        Feature articles
+      </Typography>
+    </div>
     
-    <Grid container spacing={3}>
+    <Grid container spacing={3} 
+    css={css`
+      padding-top: 10px;
+    `}>
         
       {data.allMarkdownRemark.edges.map(({ node }) => (
           
@@ -62,7 +68,7 @@ export default ({ data }) => (
                   text-decoration: none;
                   color: inherit;
               `}>
-                <Typography variant="body2" 
+                <Typography variant="body1" 
                 css={css`
                   font-family: 'Rubik', 'Pyidaungsu', sans-serif;
                 `}> 
@@ -95,6 +101,10 @@ query {
     }
   }
   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 6) {
+    group(field: frontmatter___tags) {
+      fieldValue
+      totalCount
+    }
     totalCount
     edges {
       node {

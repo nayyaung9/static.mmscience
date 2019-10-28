@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'gatsby';
 
 export default () => (
   
@@ -12,7 +11,7 @@ export default () => (
           We are going to build this website in community.
       </Typography>
       <Typography variant="body1">
-        Contribute at: <Link to='https://github.com/nayyaung9' style={{ color: 'blue'}}>Github</Link>
+        Contribute at: <a href='https://github.com/nayyaung9' style={{ color: 'blue'}}>Github</a>
       </Typography>
     </Layout>
   

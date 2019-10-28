@@ -9,7 +9,7 @@ export default ({ children }) => (
     <Navbar/>
 
     <Container maxWidth="md">
-      <main style={{ margin: '70px auto'}}>
+      <main style={{ margin: '80px auto'}}>
         {children}
       </main>
     </Container>
