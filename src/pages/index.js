@@ -36,7 +36,7 @@ export default ({ data }) => (
           css={css`
             @media screen and (max-width: 700px) {
               padding: 0 !important;
-            }            
+            }        
         `}>
           <div className="blog__post__items">
             <div 
@@ -44,8 +44,7 @@ export default ({ data }) => (
                 @media screen and (max-width: 700px) {
                   padding: 10px;
                 }
-              `}
-            >
+            `}>
               <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
               css={css`
                 @media screen and (max-width: 700px) {
@@ -68,9 +67,9 @@ export default ({ data }) => (
                   text-decoration: none;
                   color: inherit;
               `}>
-                <Typography variant="body1" 
-                css={css`
-                  font-family: 'Rubik', 'Pyidaungsu', sans-serif;
+                <Typography variant="body1"
+                css={css` 
+                  font-weight: bold;
                 `}> 
                   {node.frontmatter.title}
                 </Typography>

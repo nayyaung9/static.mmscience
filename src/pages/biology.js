@@ -85,12 +85,7 @@ export default ({ data }) => (
 
 export const query = graphql `
 query {
-  site {
-    siteMetadata {
-      title
-    }
-  }
-  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Mechanics"}}}) {
+  allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Biology"}}}) {
     totalCount
     edges {
       node {

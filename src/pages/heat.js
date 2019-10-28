@@ -1,59 +1,87 @@
-import React from 'react'
+import React from "react"
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
+import { Badge } from 'reactstrap'
+import Img from 'gatsby-image'
+import { Helmet } from 'react-helmet'
+
+import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
+
 import Layout from '../components/layout'
 
-export default ({ data }) => {
-  return (
-    <Layout>
-      <div>
-        <h1
-          css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
-        >  
-          mmscience
-        </h1>
-        <h4>{data.allMarkdownRemark.totalCount} posts</h4>
-
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div 
-            key={node.id}
-            css={css`
-              box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
-              padding: 1rem 1rem;
-              border-radius: .5em;
-              cursor: pointer;
-              margin-bottom: 20px;
-              background-color: #fff;
-          `}>
-            <Link
-              to={node.fields.slug}
-              css={css`
-                text-decoration: none;
-                color: inherit;
-            `}>
-              <h3> 
-                {node.frontmatter.title}{" "} <br />
-                <span
-                  css={css`
-                    color: #bbb;
-                  `}
-                >
-                  {node.frontmatter.date} {node.frontmatter.tags} 
-                </span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
-        ))}
+export default ({ data }) => (
+  <Layout>
+    
+    <Helmet title="MM Science | A Online Library website for Myanmar Education" />
+    
+    <Grid container spacing={3} 
+    css={css`
+      padding-top: 10px;
+    `}>
         
-      </div>
-    </Layout>
-  )
-}
-
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+          
+        <Grid item xs={12} sm={4} 
+          key={node.id} 
+          css={css`
+            @media screen and (max-width: 700px) {
+              padding: 0 !important;
+            }        
+        `}>
+          <div className="blog__post__items">
+            <div 
+              css={css`
+                @media screen and (max-width: 700px) {
+                  padding: 10px;
+                }
+            `}>
+              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+              css={css`
+                @media screen and (max-width: 700px) {
+                  box-shadow: none;
+                  border-radius: 20px;
+                }
+              `}/>
+            </div>
+            <div 
+            css={css`
+              padding: 1rem 1rem;
+              background: #fff;
+              @media screen and (max-width: 700px) {
+                border-radius: 20px;
+              }
+            `}>
+              <Link
+                to={node.fields.slug}
+                css={css`
+                  text-decoration: none;
+                  color: inherit;
+              `}>
+                <Typography variant="body1"
+                css={css` 
+                  font-weight: bold;
+                `}> 
+                  {node.frontmatter.title}
+                </Typography>
+                <Typography paragraph style={{ margin: '0'}}>
+                  {node.excerpt}
+                </Typography>
+              </Link>
+              <div className="article__label"> 
+                <Badge color="success">{node.frontmatter.tags}</Badge>  
+              </div>
+              <span className="article__meta"> 
+                {node.frontmatter.date} · {node.timeToRead} min read 
+              </span>
+            </div>
+          </div>
+        </Grid>
+         
+      ))}
+    </Grid>
+  </Layout>
+);
 export const query = graphql `
 query {
   allMarkdownRemark(filter: {frontmatter: {tags:{eq: "Heat"}}}) {
@@ -65,6 +93,13 @@ query {
           title
           date(formatString: "DD MMMM, YYYY")
           tags
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         fields {
           slug
