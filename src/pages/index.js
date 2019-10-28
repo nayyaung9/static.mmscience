@@ -13,89 +13,92 @@ import Layout from '../components/layout'
 import HomePage from '../components/home'
 
 export default ({ data }) => (
-  <Layout>
+  <React.Fragment>
+    <Layout>
 
-    {/* <TagBar tags={data.allMarkdownRemark.group}/> */}
+      {/* <TagBar tags={data.allMarkdownRemark.group}/> */}
 
-    <Helmet title="MM Science | A Online Library website for Myanmar Education" > */}
-      <meta name="description" content="A Online Library website for Myanmar Educatio" />
-      <meta name="image" content="/src/assets/mmscience0.jpg" />
-    </Helmet> 
+      <Helmet title="MM Science | A Online Library website for Myanmar Education" > */}
+        <meta name="description" content="A Online Library website for Myanmar Educatio" />
+        <meta name="image" content="/src/assets/mmscience0.jpg" />
+      </Helmet> 
 
-    <div>
-      <Typography variant="h6">
-        Feature articles
-      </Typography>
-    </div>
-    
-    <Grid container spacing={3} 
-    css={css`
-      padding-top: 10px;
-    `}>
-        
-      {data.allMarkdownRemark.edges.map(({ node }) => (
+      <div>
+        <Typography variant="h6">
+          Feature articles
+        </Typography>
+      </div>
+      
+      <Grid container spacing={3} 
+      css={css`
+        padding-top: 10px;
+      `}>
           
-        <Grid item xs={12} sm={4} 
-          key={node.id} 
-          css={css`
-            @media screen and (max-width: 700px) {
-              padding: 0 !important;
-            }        
-        `}>
-          <div className="blog__post__items">
-            <div 
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+            
+          <Grid item xs={12} sm={4} 
+            key={node.id} 
+            css={css`
+              @media screen and (max-width: 700px) {
+                padding: 0 !important;
+              }        
+          `}>
+            <div className="blog__post__items">
+              <div 
+                css={css`
+                  @media screen and (max-width: 700px) {
+                    padding: 10px;
+                  }
+              `}>
+                <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+                css={css`
+                  @media screen and (max-width: 700px) {
+                    box-shadow: none;
+                    border-radius: 20px;
+                  }
+                `}/>
+              </div>
+              <div 
               css={css`
+                padding: 1rem 1rem;
+                background: #fff;
                 @media screen and (max-width: 700px) {
-                  padding: 10px;
-                }
-            `}>
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
-              css={css`
-                @media screen and (max-width: 700px) {
-                  box-shadow: none;
                   border-radius: 20px;
                 }
-              `}/>
-            </div>
-            <div 
-            css={css`
-              padding: 1rem 1rem;
-              background: #fff;
-              @media screen and (max-width: 700px) {
-                border-radius: 20px;
-              }
-            `}>
-              <Link
-                to={node.fields.slug}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
               `}>
-                <Typography variant="body1"
-                css={css` 
-                  font-weight: bold;
-                `}> 
-                  {node.frontmatter.title}
-                </Typography>
-                <Typography paragraph style={{ margin: '0'}}>
-                  {node.excerpt}
-                </Typography>
-              </Link>
-              <div className="article__label"> 
-                <Badge color="success">{node.frontmatter.tags}</Badge>  
+                <Link
+                  to={node.fields.slug}
+                  css={css`
+                    text-decoration: none;
+                    color: inherit;
+                `}>
+                  <Typography variant="body1"
+                  css={css` 
+                    font-weight: bold;
+                  `}> 
+                    {node.frontmatter.title}
+                  </Typography>
+                  <Typography paragraph style={{ margin: '0'}}>
+                    {node.excerpt}
+                  </Typography>
+                </Link>
+                <div className="article__label"> 
+                  <Badge color="success">{node.frontmatter.tags}</Badge>  
+                </div>
+                <span className="article__meta"> 
+                  {node.frontmatter.date} · {node.timeToRead} min read 
+                </span>
               </div>
-              <span className="article__meta"> 
-                {node.frontmatter.date} · {node.timeToRead} min read 
-              </span>
             </div>
-          </div>
-        </Grid>
-         
-      ))}
-    </Grid>
+          </Grid>
+          
+        ))}
+      </Grid>
 
-    <HomePage />
-  </Layout>
+    
+    </Layout>
+  <HomePage />
+  </React.Fragment>
 );
 
 export const query = graphql `
