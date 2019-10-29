@@ -8,7 +8,6 @@ import { Helmet } from 'react-helmet'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
-import TagBar from '../components/discover'
 import Layout from '../components/layout'
 import HomePage from '../components/home'
 
@@ -51,44 +50,71 @@ export default ({ data }) => (
                   }
               `}>
                 <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
-                css={css`
-                  @media screen and (max-width: 700px) {
-                    box-shadow: none;
-                    border-radius: 20px;
-                  }
+                  css={css`
+                    @media screen and (max-width: 700px) {
+                      box-shadow: none;
+                      border-radius: 20px;
+                    }
                 `}/>
               </div>
               <div 
-              css={css`
-                padding: 1rem 1rem;
-                background: #fff;
-                @media screen and (max-width: 700px) {
-                  border-radius: 20px;
-                }
+                css={css`
+                  padding: .25rem 1rem 1rem 1rem;
+                  background: #fff;
+                  @media screen and (max-width: 700px) {
+                    border-radius: 20px;
+                  }
               `}>
-                <Link
-                  to={node.fields.slug}
+                
+                <div
                   css={css`
-                    text-decoration: none;
-                    color: inherit;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 10px auto;
                 `}>
-                  <Typography variant="body1"
-                  css={css` 
-                    font-weight: bold;
-                  `}> 
-                    {node.frontmatter.title}
-                  </Typography>
-                  <Typography paragraph style={{ margin: '0'}}>
-                    {node.excerpt}
-                  </Typography>
-                </Link>
-                <div className="article__label"> 
-                  <Badge color="success">{node.frontmatter.tags}</Badge>  
+                  <div className="article_owner">
+                    <img src={node.frontmatter.authorPic.childImageSharp.fluid.src} alt={node.frontmatter.author} 
+                      css={css`
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 100%;
+                    `}/>
+                  </div>
+                  <div
+                    css={css`
+                      margin-left: 12px;
+                  `}>
+                    <span css={css`
+                      font-weight: 700px;
+                    `}>
+                      {node.frontmatter.author}
+                    </span>
+                  <div>
+                  <span className="article__meta"> 
+                    {node.frontmatter.date} · {node.timeToRead} min read 
+                  </span>
                 </div>
-                <span className="article__meta"> 
-                  {node.frontmatter.date} · {node.timeToRead} min read 
-                </span>
               </div>
+            </div>
+
+            <Link
+              to={node.fields.slug}
+              css={css`
+                text-decoration: none;
+                color: inherit;
+            `}>
+              <Typography variant="body1"
+                css={css` 
+                   font-weight: bold;
+              `}> 
+                {node.frontmatter.title}
+              </Typography>
+            </Link>
+
+            <div className="article__label"> 
+              <Badge color="success">{node.frontmatter.tags}</Badge>  
+            </div>
+          </div> 
             </div>
           </Grid>
           
@@ -122,6 +148,14 @@ query {
         id
         frontmatter {
           title
+          author
+          authorPic {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           date(formatString: "DD MMM, YYYY")
           tags
           featuredImage {

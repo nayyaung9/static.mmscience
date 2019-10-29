@@ -137,8 +137,8 @@ export const query = graphql `
         authorPic {
           childImageSharp {
             fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid
-                  }
+              ...GatsbyImageSharpFluid
+            }
           }
         }
         tags

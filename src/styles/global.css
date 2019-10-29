@@ -56,6 +56,7 @@ a.nav-link:hover {
   border-radius: 0.25rem;
 }
 
+ /* copy in emation/coll */
 .article_role_play {
   display: flex;
   flex-direction: row;
@@ -70,7 +71,6 @@ a.nav-link:hover {
   margin-left: 12px;
 }
 .article__name {
-  display: block;
   font-weight: 700;
 }
 .article__meta {
