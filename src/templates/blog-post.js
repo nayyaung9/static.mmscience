@@ -9,7 +9,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import Layout from "../components/layout"
-import Author from '../assets/mmscience.jpg'
 
 import '../styles/global.css'
 
@@ -17,6 +16,7 @@ export default ({data}) => {
 
   const post = data.markdownRemark
   let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+  let authorPic = post.frontmatter.authorPic.childImageSharp.fluid
 
   return (
     <Layout>
@@ -31,10 +31,10 @@ export default ({data}) => {
               <h2>{post.frontmatter.title}</h2>
               <div className="article_role_play">
                 <div className="article_owner">
-                  <img src={Author} alt="Nay Yaung Lin Lakk" className="author__pic"/>
+                  <img src={authorPic.src} alt={post.frontmatter.author} className="author__pic"/>
                 </div>
                 <div className="article__profile">
-                  <span className="article__name">MM Science</span>
+                  <span className="article__name">{post.frontmatter.author}</span>
                   <div>
                     <span className="article__meta"> 
                       {post.frontmatter.date} · {post.timeToRead} min read 
@@ -133,6 +133,14 @@ export const query = graphql `
       html
       frontmatter {
         title
+        author
+        authorPic {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+          }
+        }
         tags
         date(formatString: "MMM DD")
         featuredImage {

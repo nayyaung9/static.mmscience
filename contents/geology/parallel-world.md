@@ -3,6 +3,8 @@ title: "Parallel world ဆိုတာ ဘာလဲ"
 date: "2019-10-28"
 tags: ['Science']
 featuredImage: '../images/Parallel-world.jpg'
+author: "MM Science"
+authorPic: '../images/author/mmscience.jpg'
 ---
 "လက်​ရှိ​နေထိုင်​​နေကြတဲ့ကမ႓ာကြီးနဲ့
 အပြိုင်​ဖြစ်​​တည်​နေတဲ့ကမ႓ာ​လောက(Parallel world)​တွေ၊
