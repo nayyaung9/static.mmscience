@@ -22,17 +22,30 @@ export default ({ data }) => (
         <meta name="image" content="/src/assets/mmscience0.jpg" />
       </Helmet> 
 
-      <div>
-        <Typography variant="h6">
-          Feature articles
-        </Typography>
-      </div>
-      
+
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <Typography variant="h6"  style={{ fontFamily: 'Rubik', color: '#555' }}>
+          Featured
+          </Typography>
+        
+        </Grid>
+        <Grid item xs={6} style={{ textAlign: 'right' }}>
+          <Link to='/wiki/'>
+          <Typography variant="body1"  style={{ fontFamily: 'Rubik', color: '#555' }}>
+          Browse
+          </Typography>
+            
+          </Link>
+        </Grid>
+      </Grid>
+
       <Grid container spacing={3} 
       css={css`
         padding-top: 10px;
       `}>
-          
+       
+      
         {data.allMarkdownRemark.edges.map(({ node }) => (
             
           <Grid item xs={12} sm={4} 
@@ -123,7 +136,11 @@ export default ({ data }) => (
 
     
     </Layout>
-  <HomePage />
+    <div css={css`
+      margin-top: 20px;
+    `}>
+      <HomePage />
+    </div>
   </React.Fragment>
 );
 

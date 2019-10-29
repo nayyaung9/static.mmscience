@@ -16,12 +16,14 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-import Button from '@material-ui/core/Button';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import LabelIcon from '@material-ui/icons/Label';
 import HelpIcon from '@material-ui/icons/Help';
 import Switch from '@material-ui/core/Switch';
+import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby';
+import { css } from '@emotion/core'
 import '../styles/global.css';
 
 const drawerWidth = 240;
@@ -119,12 +121,17 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap className={classes.title}>
-            <Link to='/'>MM Science</Link>
+          <Typography variant="h6" noWrap className={classes.title} 
+          css={css`
+            @media screen and (max-width: 700px) { 
+              text-align: center;
+            }
+          `}>
+            <Link to='/' style={{ fontFamily: 'Acme' }}>MM Science</Link>
           </Typography>
           <Button color="inherit">
             <Link to='/mmscience'>
-              About
+              <SearchIcon />
             </Link>
           </Button>
         </Toolbar>
