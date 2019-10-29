@@ -1,10 +1,11 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Progress } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row } from 'reactstrap';
 import classnames from 'classnames';
 import { Link } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import { css } from '@emotion/core'
 import '../styles/global.css'
+import tagsCover from '../assets/Biology.jpeg'
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -50,22 +51,32 @@ export default class Example extends React.Component {
      
               {this.props.tags.map(tag => (
                 <div className="col-md-4" key={tag.fieldValue} style={{ marginTop: '20px' }}>
-                  <div className="global__space" key={tag.fieldValue}>
-                  <Link 
+                  <div 
+                  css={css`
+                    padding: 10px;
+                    background: #fff;
+                    border-radius: 20px;
+                  `}
+                  key={tag.fieldValue}>
+                 
+                    {/* <Progress multi>
+                      <Progress animated bar color="success" value={tag.totalCount + 10} />
+                    </Progress> */}
+                    <img src={tagsCover} width="100%" 
+                    css={css`
+                      border-radius: 20px;
+                    `}/>
+               
+                    <Link 
                     to={`/${kebabCase(tag.fieldValue)}/`}
                     css={css`
                       color: #1ca086;
                       text-decoration: none;
                   `}>
-                    <b>{tag.fieldValue}</b> <br />
-
-                    <Progress multi>
-                      <Progress animated bar color="success" value={tag.totalCount + 10} />
-                    </Progress>
-                      
-                     
+                    <b>{tag.fieldValue}</b>
+                    </Link> 
                  
-                  </Link>    
+                     
                   </div>
                 </div>
               ))}

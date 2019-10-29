@@ -1,39 +1,43 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
-import { Progress } from 'reactstrap';
 import { css } from '@emotion/core'
-
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import Tabs from '@material-ui/core/Tabs'
+import Button from '@material-ui/core/Button'
 
 export default ({ tags }) => {
   return (
-    <div>
-          {tags.map(tag => (
-                <div className="col-md-4" key={tag.fieldValue} style={{ marginTop: '20px' }}>
-                  <div  key={tag.fieldValue}>
-                 
-                  <Link 
-                    to={`/${kebabCase(tag.fieldValue)}/`}
-                    css={css`
-                      color: #1ca086;
-                      text-decoration: none;
-                  `}>
-                  {tag.fieldValue}
-                  </Link> 
-                 
+    <div
+    css={css`
+    overflow: auto;
+    white-space: nowrap;
 
-              
-                     
-                 
-                  
-                  </div>
-                
-                </div>
-
-             
-              ))}
+    `}>
+      {tags.map(tag => (
+        <div key={tag.fieldValue}
+        css={css`
+          display: inline-block;
+          color: #1ca086;
+          background-color: #fff;
+          text-align: center;
+          text-decoration: none;
+          margin: 20px 10px;
+          border-radius: .25rem;
+        `}>       
+       
+          <Link 
+              to={`/${kebabCase(tag.fieldValue)}/`}
+              css={css`
+                color: #1ca086;
+                text-decoration: none;
+            `}>
+               <Button color="inherit">
+              {tag.fieldValue}
+              </Button>
+            </Link> 
+       
+        </div>
+      ))}
     </div>
   )
 }

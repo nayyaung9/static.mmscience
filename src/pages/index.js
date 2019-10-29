@@ -10,18 +10,23 @@ import Grid from '@material-ui/core/Grid'
 
 import Layout from '../components/layout'
 import HomePage from '../components/home'
+import TagBar from '../components/discover'
 
 export default ({ data }) => (
   <React.Fragment>
     <Layout>
-
-      {/* <TagBar tags={data.allMarkdownRemark.group}/> */}
 
       <Helmet title="MM Science | A Online Library website for Myanmar Education" > */}
         <meta name="description" content="A Online Library website for Myanmar Educatio" />
         <meta name="image" content="/src/assets/mmscience0.jpg" />
       </Helmet> 
 
+      <Grid container spacing={3}>
+      
+          <TagBar tags={data.allMarkdownRemark.group}/>
+       
+      </Grid>
+     
 
       <Grid container spacing={2}>
         <Grid item xs={6}>
