@@ -1,7 +1,7 @@
 ---
 title: "သဘာဝလွန်ဖြစ်ရပ်တွေထဲက ဖြေရှင်းလို့မရသေးတဲ့ Time Traveller အကြောင်း"
 date: "2019-10-29"
-tags: ['Science']
+tags: ['Physics']
 featuredImage: '../images/time-traveller.jpg'
 author: "Ye Yint Minn"
 authorPic: '../images/author/Ye-Yint-Minn.jpg'

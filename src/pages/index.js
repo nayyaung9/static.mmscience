@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet'
 
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
 
 import Layout from '../components/layout'
 import HomePage from '../components/home'
@@ -22,33 +23,17 @@ export default ({ data }) => (
       </Helmet> 
 
       <Grid container spacing={3}>
-      
-          <TagBar tags={data.allMarkdownRemark.group}/>
-       
+        <TagBar tags={data.allMarkdownRemark.group}/>
       </Grid>
      
-
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <Typography variant="h6"  style={{ fontFamily: 'Rubik', color: '#555' }}>
-          Featured
-          </Typography>
-        
-        </Grid>
-        <Grid item xs={6} style={{ textAlign: 'right' }}>
-          <Link to='/wiki/'>
-          <Typography variant="body1"  style={{ fontFamily: 'Rubik', color: '#555' }}>
-          Browse
-          </Typography>
-            
-          </Link>
-        </Grid>
-      </Grid>
-
       <Grid container spacing={3} 
-      css={css`
-        padding-top: 10px;
-      `}>
+        direction="row"
+        justify="center"
+        alignItems="stretch"
+    
+        css={css`
+          padding-top: 10px;
+        `}>
        
       
         {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -58,11 +43,13 @@ export default ({ data }) => (
             css={css`
               @media screen and (max-width: 700px) {
                 padding: 0 !important;
+                margin-bottom: 20px;
               }        
           `}>
-            <div className="blog__post__items">
+            <div className="blog__post__items" style={{ height: '100%' }}>
               <div 
                 css={css`
+                
                   @media screen and (max-width: 700px) {
                     padding: 10px;
                   }
@@ -138,7 +125,12 @@ export default ({ data }) => (
           
         ))}
       </Grid>
-
+      <div css={css`
+        padding: 30px;
+        text-align: center;
+      `}>
+        <Button variant="outlined" color="inherit" style={{ textAlign: 'center' }}>read more</Button>
+      </div>
     
     </Layout>
     <div css={css`

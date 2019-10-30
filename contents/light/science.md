@@ -1,7 +1,7 @@
 ---
 title: "နက္ခတ္တဗေဒ(အင်္ဂလိပ်:astronomy)သည်ဂြိုဟ်များကြယ်များ၊ ဂယ်လက်ဆီများနှင့်..."
 date: "2019-10-30"
-tags: ['Science']
+tags: ['Astronomy']
 featuredImage: '../images/na-ka-ta-bay-da.jpg'
 author: "MM Science"
 authorPic: '../images/author/mmscience.jpg'

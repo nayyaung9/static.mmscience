@@ -1,7 +1,7 @@
 ---
 title: "Parallel world ဆိုတာ ဘာလဲ"
 date: "2019-10-28"
-tags: ['Science']
+tags: ['Test']
 featuredImage: '../images/Parallel-world.jpg'
 author: "MM Science"
 authorPic: '../images/author/mmscience.jpg'
