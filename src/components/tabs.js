@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import { css } from '@emotion/core'
 import '../styles/global.css'
-import tagsCover from '../assets/Biology.jpeg'
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -62,10 +61,7 @@ export default class Example extends React.Component {
                     {/* <Progress multi>
                       <Progress animated bar color="success" value={tag.totalCount + 10} />
                     </Progress> */}
-                    <img src={tagsCover} width="100%" 
-                    css={css`
-                      border-radius: 20px;
-                    `}/>
+
                
                     <Link 
                     to={`/${kebabCase(tag.fieldValue)}/`}

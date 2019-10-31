@@ -6,7 +6,6 @@ import { Link } from 'gatsby';
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [title, setTitle] = React.useState('select type');
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -16,13 +15,10 @@ export default function SimpleMenu() {
     setAnchorEl(null);
   };
 
-  React.useEffect(() => {
-    
-  }, []);
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} variant="contained" color="inherit" fullWidth>
-        {title}
+        select type
       </Button>
       <Menu
         id="simple-menu"

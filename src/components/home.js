@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { Link } from 'gatsby'
+
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -28,7 +28,7 @@ export default () => {
         <Container maxWidth="md">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
-              <img src={BlogPost} width="20%"/>
+              <img src={BlogPost} width="20%" alt="blog-post-item"/>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography paragraph>
@@ -43,7 +43,7 @@ export default () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <img src={CategoryImg} width="20%" />
+              <img src={CategoryImg} width="20%" alt="discover"/>
             </Grid>
           </Grid>
         </Container> 

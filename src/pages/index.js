@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { Badge } from 'reactstrap'

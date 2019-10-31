@@ -18,18 +18,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `MM Science App`,
-        short_name: `MM Sience`,
+        name: `MM Science`,
+        short_name: `MM Science`,
         description: `MMScience is a online library website for Myanmar Education`,
         "icons": [
           {
-            "src": "/icons/mmscience0.jpg",
-            "type": "image/jpg",
+            "src": "/icons/small-app-icon.jpg",
+            "type": "image/png",
             "sizes": "192x192"
           },
           {
-            "src": "/icons/mmscience0.jpg",
-            "type": "image/jpg",
+            "src": "/icons/big-app-icon.jpg",
+            "type": "image/png",
             "sizes": "512x512"
           }
         ],
@@ -39,6 +39,7 @@ module.exports = {
         display: `standalone`,
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,

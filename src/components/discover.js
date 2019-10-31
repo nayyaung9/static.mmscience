@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import { css } from '@emotion/core'
-import Tabs from '@material-ui/core/Tabs'
 import Button from '@material-ui/core/Button'
 
 export default ({ tags }) => {
