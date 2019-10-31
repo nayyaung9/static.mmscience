@@ -20,109 +20,111 @@ export default ({data}) => {
 
   return (
     <Layout>
-
+      <main style={{ marginTop: '80px' }}>
       <Helmet title={`MM Science | ${post.frontmatter.title}`} />
-      <div className="row">
-        <div className="col-md-2"></div>
-        <div className="col-md-8 singal_content">
-          <div className="article">
-            <Img fluid={featuredImgFluid} loading="lazy" />
-            <div className="article__content">
-              <h2>{post.frontmatter.title}</h2>
-              <div className="article_role_play">
-                <div className="article_owner">
-                  <img src={authorPic.src} alt={post.frontmatter.author} className="author__pic"/>
-                </div>
-                <div className="article__profile">
-                  <span className="article__name">{post.frontmatter.author}</span>
-                  <div>
-                    <span className="article__meta"> 
-                      {post.frontmatter.date} · {post.timeToRead} min read 
-                    </span>
+
+      
+        <div className="row">
+          <div className="col-md-2"></div>
+          <div className="col-md-8 singal_content">
+            <div className="article">
+              <Img fluid={featuredImgFluid} loading="lazy" />
+              <div className="article__content">
+                <h2>{post.frontmatter.title}</h2>
+                <div className="article_role_play">
+                  <div className="article_owner">
+                    <img src={authorPic.src} alt={post.frontmatter.author} className="author__pic"/>
+                  </div>
+                  <div className="article__profile">
+                    <span className="article__name">{post.frontmatter.author}</span>
+                    <div>
+                      <span className="article__meta"> 
+                        {post.frontmatter.date} · {post.timeToRead} min read 
+                      </span>
+                    </div>
                   </div>
                 </div>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
               </div>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
           </div>
+          <div className="col-md-2"></div>
         </div>
-        <div className="col-md-2"></div>
-      </div>
 
-      <Typography variant="body2">
-        Awesome articles
-      </Typography>
-      <div className="other_stories">
+        <Typography variant="body2">
+          Awesome articles
+        </Typography>
+        <div className="other_stories">
 
-      <Grid container spacing={3} 
-    css={css`
-      padding-top: 10px;
-    `}>
-        
-      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <Grid container spacing={3} 
+      css={css`
+        padding-top: 10px;
+      `}>
           
-        <Grid item xs={12} sm={4} 
-          key={node.id} 
-          css={css`
-            @media screen and (max-width: 700px) {
-              padding: 0 !important;
-            }            
-        `}>
-          <div className="blog__post__items">
-            <div 
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+            
+          <Grid item xs={12} sm={4} 
+            key={node.id} 
+            css={css`
+              @media screen and (max-width: 700px) {
+                padding: 0 !important;
+              }            
+          `}>
+            <div className="blog__post__items">
+              <div 
+                css={css`
+                  @media screen and (max-width: 700px) {
+                    padding: 10px;
+                  }
+                `}
+              >
+                <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+                css={css`
+                  @media screen and (max-width: 700px) {
+                    box-shadow: none;
+                    border-radius: 20px;
+                  }
+                `}/>
+              </div>
+              <div 
               css={css`
+                padding: 1rem 1rem;
+                background: #fff;
                 @media screen and (max-width: 700px) {
-                  padding: 10px;
-                }
-              `}
-            >
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
-              css={css`
-                @media screen and (max-width: 700px) {
-                  box-shadow: none;
                   border-radius: 20px;
                 }
-              `}/>
-            </div>
-            <div 
-            css={css`
-              padding: 1rem 1rem;
-              background: #fff;
-              @media screen and (max-width: 700px) {
-                border-radius: 20px;
-              }
-            `}>
-              <Link
-                to={node.fields.slug}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
               `}>
-                <Typography variant="body2" 
-                css={css`
-                  font-family: 'Rubik', 'Pyidaungsu', sans-serif;
-                `}> 
-                  {node.frontmatter.title}
-                </Typography>
-                <Typography paragraph style={{ margin: '0'}}>
-                  {node.excerpt}
-                </Typography>
-              </Link>
-              <div className="article__label"> 
-                <Badge color="success">{node.frontmatter.tags}</Badge>  
+                <Link
+                  to={node.fields.slug}
+                  css={css`
+                    text-decoration: none;
+                    color: inherit;
+                `}>
+                  <Typography variant="body2" 
+                  css={css`
+                    font-family: 'Rubik', 'Pyidaungsu', sans-serif;
+                  `}> 
+                    {node.frontmatter.title}
+                  </Typography>
+                  <Typography paragraph style={{ margin: '0'}}>
+                    {node.excerpt}
+                  </Typography>
+                </Link>
+                <div className="article__label"> 
+                  <Badge color="success">{node.frontmatter.tags}</Badge>  
+                </div>
+                <span className="article__meta"> 
+                  {node.frontmatter.date} · {node.timeToRead} min read 
+                </span>
               </div>
-              <span className="article__meta"> 
-                {node.frontmatter.date} · {node.timeToRead} min read 
-              </span>
             </div>
-          </div>
-        </Grid>
-         
-      ))}
-    </Grid>
-
-      </div>
-
+          </Grid>
+          
+        ))}
+      </Grid>
+    
+        </div>
+      </main>
     </Layout>
   )
 }

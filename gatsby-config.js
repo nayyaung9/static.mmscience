@@ -15,6 +15,30 @@ module.exports = {
         path: `${__dirname}/contents`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `MM Science App`,
+        short_name: `MM Sience`,
+        description: `MMScience is a online library website for Myanmar Education`,
+        "icons": [
+          {
+            "src": "/icons/mmscience0.jpg",
+            "type": "image/jpg",
+            "sizes": "192x192"
+          },
+          {
+            "src": "/icons/mmscience0.jpg",
+            "type": "image/jpg",
+            "sizes": "512x512"
+          }
+        ],
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#fff`,
+        display: `standalone`,
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,

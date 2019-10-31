@@ -25,16 +25,26 @@ export default ({ tags }) => {
           border-radius: .25rem;
         `}>       
        
-          <Link 
+          {/* <Link 
               to={`/${kebabCase(tag.fieldValue)}/`}
               css={css`
                 color: #1ca086;
                 text-decoration: none;
             `}>
                <Button color="inherit">
-              {tag.fieldValue}
+            
               </Button>
-            </Link> 
+            </Link>  */}
+
+            <Button variant="contained" 
+              href={`/${kebabCase(tag.fieldValue)}/`}
+              css={css`
+                color: #1ca086;
+                background: #fff;
+                text-decoration: none;
+            `}>
+          {tag.fieldValue}
+      </Button>
        
         </div>
       ))}
