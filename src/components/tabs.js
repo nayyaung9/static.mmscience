@@ -57,14 +57,10 @@ export default class Example extends React.Component {
                     border-radius: 20px;
                   `}
                   key={tag.fieldValue}>
-                 
-                    {/* <Progress multi>
-                      <Progress animated bar color="success" value={tag.totalCount + 10} />
-                    </Progress> */}
-
                
                     <Link 
                     to={`/${kebabCase(tag.fieldValue)}/`}
+                    alt={tag.fieldValue}
                     css={css`
                       color: #1ca086;
                       text-decoration: none;

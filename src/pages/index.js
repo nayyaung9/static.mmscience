@@ -106,6 +106,7 @@ export default ({ data }) => {
 
               <Link
                 to={node.fields.slug}
+                alt={node.frontmatter.title}
                 css={css`
                   text-decoration: none;
                   color: inherit;
@@ -131,7 +132,7 @@ export default ({ data }) => {
           padding: 30px;
           text-align: center;
         `}>
-          <Button variant="outlined" color="inherit" style={{ textAlign: 'center' }} href='/wiki/'>read more</Button>
+          <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }} href='/wiki/'>read more</Button>
         </div>
         
       </main>

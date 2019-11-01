@@ -29,7 +29,7 @@ export default ({data}) => {
           <div className="col-md-8 singal_content">
             <div className="article">
               <Img fluid={featuredImgFluid} loading="lazy" />
-              <div className="article__content">
+              <div className="article__content" style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}>
                 <h2>{post.frontmatter.title}</h2>
                 <div className="article_role_play">
                   <div className="article_owner">
@@ -38,7 +38,7 @@ export default ({data}) => {
                   <div className="article__profile">
                     <span className="article__name">{post.frontmatter.author}</span>
                     <div>
-                      <span className="article__meta"> 
+                      <span className="article__meta" style={{ color: 'var(--appBar-text)'}}> 
                         {post.frontmatter.date} · {post.timeToRead} min read 
                       </span>
                     </div>
@@ -70,7 +70,7 @@ export default ({data}) => {
                 padding: 0 !important;
               }            
           `}>
-            <div className="blog__post__items">
+            <div className="blog__post__items" >
               <div 
                 css={css`
                   @media screen and (max-width: 700px) {
@@ -87,15 +87,16 @@ export default ({data}) => {
                 `}/>
               </div>
               <div 
+              style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}
               css={css`
                 padding: 1rem 1rem;
-                background: #fff;
                 @media screen and (max-width: 700px) {
                   border-radius: 20px;
                 }
               `}>
                 <Link
                   to={node.fields.slug}
+                  alt={node.fields.slug}
                   css={css`
                     text-decoration: none;
                     color: inherit;
@@ -113,7 +114,7 @@ export default ({data}) => {
                 <div className="article__label"> 
                   <Badge color="success">{node.frontmatter.tags}</Badge>  
                 </div>
-                <span className="article__meta"> 
+                <span className="article__meta" style={{ color: 'var(--appBar-text)'}}> 
                   {node.frontmatter.date} · {node.timeToRead} min read 
                 </span>
               </div>

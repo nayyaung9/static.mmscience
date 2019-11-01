@@ -130,10 +130,10 @@ export default function PersistentDrawerLeft() {
               text-align: center;
             }
           `}>
-            <Link to='/' style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }}>MM Science</Link>
+            <Link to='/' style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }} alt="home">MM Science</Link>
           </Typography>
           <Button color="inherit">
-            <Link to='/mmscience' style={{ color: 'var(--appBar-text)' }}>
+            <Link to='/mmscience' style={{ color: 'var(--appBar-text)' }} alt="mmscience about">
               <SearchIcon />
             </Link>
           </Button>
@@ -158,19 +158,19 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <Link to='/'>
+          <Link to='/' alt="home">
             <ListItem button style={{ color: 'var(--appBar-text)' }}>
               <ListItemIcon> <HomeIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          <Link to='/wiki/' style={{ color: 'var(--appBar-text)' }}>
+          <Link to='/wiki/' style={{ color: 'var(--appBar-text)' }} alt="wiki">
             <ListItem button>
               <ListItemIcon> <DynamicFeedIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Feed" />
             </ListItem>
           </Link>
-          <Link to='/discover/' style={{ color: 'var(--appBar-text)' }}>
+          <Link to='/discover/' style={{ color: 'var(--appBar-text)' }} alt="discover">
             <ListItem button>
               <ListItemIcon> <LabelIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Discover" />
@@ -179,14 +179,17 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          <Link to='/help/' style={{ color: 'var(--appBar-text)' }}>
+          <Link to='/help/' style={{ color: 'var(--appBar-text)' }} alt="help center">
             <ListItem button>
               <ListItemIcon> <HelpIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="How to use it" />
             </ListItem>
           </Link>
-          <ListItem>
-            <Theme />
+          <ListItem style={{ color: 'var(--appBar-text)' }}>
+            <ListItemIcon>
+              <Theme /> 
+            </ListItemIcon>
+            <ListItemText primary="Dark Mode" />
           </ListItem>
         </List>
       </Drawer>

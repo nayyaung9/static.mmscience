@@ -13,9 +13,11 @@ import Grid from '@material-ui/core/Grid';
 
 export default ({ data }) => {
   return (
+
     <React.Fragment>
-      <div css={css`
-        background: rgb(72, 191, 131);
+      <div
+      style={{ backgroundColor: 'var(--wiki-board)'}} 
+      css={css`
         padding: 20px;
         color: #fff;
         padding: 100px 0 40px 0;
@@ -26,7 +28,6 @@ export default ({ data }) => {
           wiki ( ကဏ္ဍစုံစာမျက်နှာ )
         </Typography>
       </div>
-
 
       <Container maxWidth="md" style={{ margin: '30px auto'}}>
         <Grid container spacing={3}>
@@ -43,107 +44,106 @@ export default ({ data }) => {
 
       <Layout>
         <main>
-        <Helmet title={data.site.siteMetadata.title} />
 
-     
+          <Helmet title={data.site.siteMetadata.title} />
 
-        <Grid container spacing={3} 
-          direction="row"
-          justify="center"
-          alignItems="stretch"
->
+          <Grid container 
+            spacing={3} 
+            direction="row"
+            justify="center"
+            alignItems="stretch">
+          
         
-        
-          {data.allMarkdownRemark.edges.map(({ node }) => (
+            {data.allMarkdownRemark.edges.map(({ node }) => (
               
-            <Grid item xs={12} sm={4} 
-              key={node.id} 
-              css={css`
-                @media screen and (max-width: 700px) {
-                  padding: 0 !important;
-                  margin-bottom: 20px !important;
-                }        
-            `}>
-              <div className="blog__post__items" style={{ height: '100%' }}>
-                <div 
-                  css={css`
-                  
-                    @media screen and (max-width: 700px) {
-                      padding: 10px;
-                    }
-                `}>
-                  <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+              <Grid item xs={12} sm={4} 
+                key={node.id} 
+                css={css`
+                  @media screen and (max-width: 700px) {
+                    padding: 0 !important;
+                    margin-bottom: 20px !important;
+                  }`}>
+
+                <div className="blog__post__items" style={{ height: '100%', backgroundColor: 'var(--appBar-bg)' }}>
+                  <div 
+                    css={css`
+                      @media screen and (max-width: 700px) {
+                        padding: 10px;
+                      }`
+                  }>
+                    <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
                     css={css`
                       @media screen and (max-width: 700px) {
                         box-shadow: none;
                         border-radius: 20px;
                       }
-                  `}/>
-                </div>
-                <div 
+                    `}/>  
+                  </div>
+                  <div 
+                  style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}
                   css={css`
-                    padding: .25rem 1rem 1rem 1rem;
-                    background: #fff;
-                    @media screen and (max-width: 700px) {
-                      border-radius: 20px;
-                    }
-                `}>
-                  
-                  <div
-                    css={css`
-                      display: flex;
-                      flex-direction: row;
-                      margin: 10px auto;
+                      padding: .25rem 1rem 1rem 1rem;
+                      @media screen and (max-width: 700px) {
+                        border-radius: 20px;
+                      }
                   `}>
-                    <div className="article_owner">
-                      <img src={node.frontmatter.authorPic.childImageSharp.fluid.src} alt={node.frontmatter.author} 
-                        css={css`
-                          width: 40px;
-                          height: 40px;
-                          border-radius: 100%;
-                      `}/>
-                    </div>
                     <div
                       css={css`
-                        margin-left: 12px;
+                        display: flex;
+                        flex-direction: row;
+                        margin: 10px auto;
                     `}>
-                      <span css={css`
-                        font-weight: 700px;
+                      <div className="article_owner">
+                        <img src={node.frontmatter.authorPic.childImageSharp.fluid.src} alt={node.frontmatter.author} 
+                          css={css`
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 100%;
+                        `}/>
+                      </div>
+                      <div
+                        css={css`
+                          margin-left: 12px;
                       `}>
-                        {node.frontmatter.author}
+                        <span css={css`
+                          font-weight: 700px;
+                        `}>
+                          {node.frontmatter.author}
+                        </span>
+                      <div>
+                      <span className="article__meta"> 
+                        {node.frontmatter.date} · {node.timeToRead} min read 
                       </span>
-                    <div>
-                    <span className="article__meta"> 
-                      {node.frontmatter.date} · {node.timeToRead} min read 
-                    </span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <Link
-                to={node.fields.slug}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-              `}>
-                <Typography variant="body1"
-                  css={css` 
-                    font-weight: bold;
-                `}> 
-                  {node.frontmatter.title}
-                </Typography>
-              </Link>
+                <Link
+                  to={node.fields.slug}
+                  alt={node.fields.slug}
+                  css={css`
+                    text-decoration: none;
+                    color: inherit;
+                `}>
+                  <Typography variant="body1"
+                    css={css` 
+                      font-weight: bold;
+                  `}> 
+                    {node.frontmatter.title}
+                  </Typography>
+                </Link>
 
-              <div className="article__label"> 
-                <Badge color="success">{node.frontmatter.tags}</Badge>  
-              </div>
-            </div> 
+                <div className="article__label"> 
+                  <Badge color="success">{node.frontmatter.tags}</Badge>  
+                </div>
+
+              </div> 
               </div>
             </Grid>
             
-          ))}
-        </Grid>
-      </main>
+            ))}
+          </Grid>
+        </main>
       </Layout>
     </React.Fragment>
   )

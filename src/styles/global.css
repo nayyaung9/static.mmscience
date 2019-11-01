@@ -5,12 +5,14 @@
 :root {
   --appBar-text: #000;
   
+  
 }
 body {
   background-color: #eeeeee;
   color: #000;
   --appBar-bg: #fff;
   --discover-text: #1ca086;
+  --wiki-board: rgb(72, 191, 131);
 }
 body.dark {
   background-color: #121212;
@@ -18,10 +20,12 @@ body.dark {
   --appBar-bg: #2d2d2d;
   --appBar-text: #fff;
   --discover-text: #ddd;
+  --wiki-board: #2d2d2d;
 }
 .MuiDrawer-paper {
   background-color: var(--appBar-bg) !important;
 }
+
 a {
   /* color: #000; */
 }

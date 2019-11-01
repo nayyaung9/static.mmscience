@@ -28,13 +28,13 @@ export default function SimpleMenu() {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>
-          <Link to='/wiki/'>feed</Link>
+          <Link to='/wiki/' alt="feed">feed</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to='/wiki/new/'>Recently published</Link>
+          <Link to='/wiki/new/' alt="Recently published">Recently published</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to='/wiki/short-story/'>Shortest time to read</Link>
+          <Link to='/wiki/short-story/' alt="Shortest time to read">Shortest time to read</Link>
         </MenuItem>
       </Menu>
     </div>

@@ -15,6 +15,7 @@ module.exports = {
         path: `${__dirname}/contents`,
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -39,7 +40,6 @@ module.exports = {
         display: `standalone`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,

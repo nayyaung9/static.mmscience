@@ -54,6 +54,7 @@ export default ({ data }) => (
             `}>
               <Link
                 to={node.fields.slug}
+                alt={node.fields.slug}
                 css={css`
                   text-decoration: none;
                   color: inherit;
