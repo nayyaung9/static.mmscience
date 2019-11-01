@@ -13,32 +13,19 @@ export default ({ tags }) => {
     `}>
       {tags.map(tag => (
         <div key={tag.fieldValue}
+       
         css={css`
           display: inline-block;
-          color: #1ca086;
-          background-color: #fff;
           text-align: center;
           text-decoration: none;
           margin: 20px 10px;
           border-radius: .25rem;
         `}>       
-       
-          {/* <Link 
-              to={`/${kebabCase(tag.fieldValue)}/`}
-              css={css`
-                color: #1ca086;
-                text-decoration: none;
-            `}>
-               <Button color="inherit">
-            
-              </Button>
-            </Link>  */}
 
             <Button variant="contained" 
               href={`/${kebabCase(tag.fieldValue)}/`}
+              style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--discover-text)' }}
               css={css`
-                color: #1ca086;
-                background: #fff;
                 text-decoration: none;
             `}>
           {tag.fieldValue}

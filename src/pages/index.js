@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { Badge } from 'reactstrap'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
 
@@ -19,7 +18,8 @@ export default ({ data }) => {
       <Layout>
         <main style={{ marginTop: '80px'}}>
 
-        <Helmet title="MM Science | A Online Library website for Myanmar Education" > */}
+        <Helmet title="MM Science | A Online Library website for Myanmar Education" > 
+          <html lang="en" />
           <meta name="description" content="A Online Library website for Myanmar Educatio" />
           <meta name="image" content="/src/assets/mmscience0.jpg" />
         </Helmet> 
@@ -47,7 +47,7 @@ export default ({ data }) => {
                   margin-bottom: 20px !important;
                 }        
             `}>
-              <div className="blog__post__items" style={{ height: '100%' }}>
+              <div className="blog__post__items" style={{ height: '100%', backgroundColor: 'var(--appBar-bg)' }}>
                 <div 
                   css={css`
                   
@@ -64,6 +64,7 @@ export default ({ data }) => {
                   `}/>
                 </div>
                 <div 
+                  style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}
                   css={css`
                     padding: .25rem 1rem 1rem 1rem;
                     background: #fff;
@@ -96,7 +97,7 @@ export default ({ data }) => {
                         {node.frontmatter.author}
                       </span>
                     <div>
-                    <span className="article__meta"> 
+                    <span className="article__meta" style={{ color: 'var(--appBar-text)' }}> 
                       {node.frontmatter.date} · {node.timeToRead} min read 
                     </span>
                   </div>
@@ -118,7 +119,7 @@ export default ({ data }) => {
               </Link>
 
               <div className="article__label"> 
-                <Badge color="success">{node.frontmatter.tags}</Badge>  
+                {node.frontmatter.tags}
               </div>
             </div> 
               </div>

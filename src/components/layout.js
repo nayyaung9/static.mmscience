@@ -6,10 +6,15 @@ import Container from '@material-ui/core/Container';
 
 export default ({ children }) => (
   <React.Fragment>
-    <Navbar/>
+  
+       
+    
+      <Navbar/>
 
-    <Container maxWidth="md">
-      {children}
-    </Container>
+      <Container maxWidth="md">
+        {children}
+        
+      </Container>
+ 
   </React.Fragment>
 );

@@ -19,11 +19,11 @@ import HomeIcon from '@material-ui/icons/Home';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import LabelIcon from '@material-ui/icons/Label';
 import HelpIcon from '@material-ui/icons/Help';
-import Switch from '@material-ui/core/Switch';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby';
 import { css } from '@emotion/core'
+import Theme from '../components/theme'
 import '../styles/global.css';
 
 const drawerWidth = 240;
@@ -108,8 +108,10 @@ export default function PersistentDrawerLeft() {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-        color="inherit"
-        style={{ boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)' }}
+        style={{ 
+          boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)',
+          backgroundColor: 'var(--appBar-bg)'
+        }}
       >
         <Toolbar>
           <IconButton
@@ -118,6 +120,7 @@ export default function PersistentDrawerLeft() {
             onClick={handleDrawerOpen}
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
+            style={{ color: 'var(--appBar-text)' }}
           >
             <MenuIcon />
           </IconButton>
@@ -127,10 +130,10 @@ export default function PersistentDrawerLeft() {
               text-align: center;
             }
           `}>
-            <Link to='/' style={{ fontFamily: 'Acme' }}>MM Science</Link>
+            <Link to='/' style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }}>MM Science</Link>
           </Typography>
           <Button color="inherit">
-            <Link to='/mmscience'>
+            <Link to='/mmscience' style={{ color: 'var(--appBar-text)' }}>
               <SearchIcon />
             </Link>
           </Button>
@@ -144,48 +147,46 @@ export default function PersistentDrawerLeft() {
         classes={{
           paper: classes.drawerPaper,
         }}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose} style={{ color: 'var(--appBar-text)' }}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
         <Divider />
         <List>
           <Link to='/'>
-            <ListItem button>
-              <ListItemIcon> <HomeIcon /> </ListItemIcon>
+            <ListItem button style={{ color: 'var(--appBar-text)' }}>
+              <ListItemIcon> <HomeIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          <Link to='/wiki/'>
+          <Link to='/wiki/' style={{ color: 'var(--appBar-text)' }}>
             <ListItem button>
-              <ListItemIcon> <DynamicFeedIcon /> </ListItemIcon>
+              <ListItemIcon> <DynamicFeedIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Feed" />
             </ListItem>
           </Link>
-          <Link to='/discover/'>
+          <Link to='/discover/' style={{ color: 'var(--appBar-text)' }}>
             <ListItem button>
-              <ListItemIcon> <LabelIcon /> </ListItemIcon>
+              <ListItemIcon> <LabelIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Discover" />
             </ListItem>
           </Link>
         </List>
         <Divider />
         <List>
-          <Link to='/help/'>
+          <Link to='/help/' style={{ color: 'var(--appBar-text)' }}>
             <ListItem button>
-              <ListItemIcon> <HelpIcon /> </ListItemIcon>
+              <ListItemIcon> <HelpIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="How to use it" />
             </ListItem>
           </Link>
           <ListItem>
-            <Switch
-              value="mode"
-              color="primary"
-              inputProps={{ 'aria-label': 'primary checkbox' }}
-              label="night mode"
-            /> Night mode
+            <Theme />
           </ListItem>
         </List>
       </Drawer>

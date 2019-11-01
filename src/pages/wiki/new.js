@@ -4,7 +4,6 @@ import { css } from '@emotion/core'
 import { Helmet } from "react-helmet"
 import Layout from '../../components/layout'
 import ReadType from '../../components/read-type'
-import { Badge } from 'reactstrap';
 import Img from 'gatsby-image'
 import '../../styles/global.css'
 import Container from '@material-ui/core/Container'
@@ -135,7 +134,7 @@ export default ({ data }) => {
               </Link>
 
               <div className="article__label"> 
-                <Badge color="success">{node.frontmatter.tags}</Badge>  
+                {node.frontmatter.tags}
               </div>
             </div> 
               </div>

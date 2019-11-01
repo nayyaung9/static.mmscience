@@ -1,11 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 @import url('https://mmwebfonts.comquas.com/fonts/?font=pyidaungsu');
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
+:root {
+  --appBar-text: #000;
+  
+}
 body {
-  background-color: #eeeeee !important;
+  background-color: #eeeeee;
+  color: #000;
+  --appBar-bg: #fff;
+  --discover-text: #1ca086;
+}
+body.dark {
+  background-color: #121212;
+  color: #000;
+  --appBar-bg: #2d2d2d;
+  --appBar-text: #fff;
+  --discover-text: #ddd;
+}
+.MuiDrawer-paper {
+  background-color: var(--appBar-bg) !important;
 }
 a {
-  color: #000;
+  /* color: #000; */
 }
 a:hover {
   text-decoration: none !important;
