@@ -14,11 +14,9 @@ export default class SearchList extends Component {
       query: ``,
       results: [],
     }
-   
   }
 
   render() {
-    console.log(this.props.features)
     return (
 			<Layout style={{ marginTop: '80px'}}>
 				<div 
@@ -58,13 +56,6 @@ export default class SearchList extends Component {
               </div>
 						))}
 					</div>
-
-          <div style={{ marginTop: '30px'}}>
-            {/* {this.props.features.map(({node}) => (
-              <h1>{node.frontmatter.title}</h1>
-            ))} */}
-            <h1>Suggested articles</h1>
-          </div>
 				</Layout>
      
     )
