@@ -1,5 +1,5 @@
 ---
-path: "/what-does-a-light-look-like"
+path: "/light/what-does-a-light-look-like"
 title: "အလင်းဆိုတာ အမှုန်လား..လှိုင်းလား"
 date: "2019-10-27"
 tags: ['Light']

@@ -133,7 +133,7 @@ export default function PersistentDrawerLeft() {
             <Link to='/' style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }} alt="home">MM Science</Link>
           </Typography>
           <Button color="inherit">
-            <Link to='/mmscience' style={{ color: 'var(--appBar-text)' }} alt="mmscience about">
+            <Link to='/search/' style={{ color: 'var(--appBar-text)' }} alt="mmscience about">
               <SearchIcon />
             </Link>
           </Button>
