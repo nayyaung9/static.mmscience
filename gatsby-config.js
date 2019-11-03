@@ -36,7 +36,7 @@ module.exports = {
         ],
         start_url: `/`,
         background_color: `#f7f0eb`,
-        theme_color: `${process.env.GATSBY_THEME_COLOR}`,
+        theme_color: `#2d2d2d`,
         display: `standalone`,
       },
     },

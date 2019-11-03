@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import Layout from '../components/layout'
 import { Index } from "elasticlunr"
 import { Link } from 'gatsby'
+import { Badge } from 'reactstrap'
 
 // SearchList component
 export default class SearchList extends Component {
@@ -13,9 +14,11 @@ export default class SearchList extends Component {
       query: ``,
       results: [],
     }
+   
   }
 
   render() {
+    console.log(this.props.features)
     return (
 			<Layout style={{ marginTop: '80px'}}>
 				<div 
@@ -24,27 +27,44 @@ export default class SearchList extends Component {
           border-radius: 0.5rem;
           padding: 10px;
         `}>
-						<TextField
-							id="outlined-basic"
-							label="Search articles"
-							variant="outlined"
-							fullWidth={true}
-							defaultValue={this.state.title}
-							onChange={this.search}
-						/>
-
-					</div>
+					<TextField
+						id="outlined-basic"
+						label="Search articles"
+						variant="outlined"
+						fullWidth={true}
+						defaultValue={this.state.query}
+						onChange={this.search}
+					/>
+				</div>
 					
-					<ul>
+					<div style={{ marginTop: '30px' }}>
 						{this.state.results.map(page => (
-							<li key={page.id}>
-								<Link to={"/" + page.path}>{page.title}</Link>
-                {": " + page.tags.join(`,`)}
-                {console.log(page)}
+						
+
+              <div 
+              key={page.id}
+              css={css`
+                padding: 10px;
+                background: #fff;
+                border-radius: 0.5rem;
+              `}>
+	            <Link to={"/" + page.path}>{page.title}</Link> <br />
+                <Badge color="success">
+                  { page.tags.join(`,`) }
+                </Badge>
+               
+                
                 by {page.author}
-							</li>
+              </div>
 						))}
-					</ul>
+					</div>
+
+          <div style={{ marginTop: '30px'}}>
+            {/* {this.props.features.map(({node}) => (
+              <h1>{node.frontmatter.title}</h1>
+            ))} */}
+            <h1>Suggested articles</h1>
+          </div>
 				</Layout>
      
     )
@@ -68,3 +88,4 @@ export default class SearchList extends Component {
     })
   }
 }
+
