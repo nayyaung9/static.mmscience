@@ -12,8 +12,9 @@ import CategoryImg from '../assets/discover.png'
 export default () => {
   return (
     <React.Fragment>
-      <div css={css`
-        background-color: #fff;
+      <div 
+      style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}
+      css={css`
         padding: 30px;
         text-align: center;
       `}>
@@ -28,7 +29,7 @@ export default () => {
         <Container maxWidth="md">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
-              <img src={BlogPost} width="20%" alt="blog-post-item"/>
+              <img src={BlogPost} width="20%" alt="blog-post-item" className="homepage-icon" />
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography paragraph>
@@ -43,7 +44,7 @@ export default () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <img src={CategoryImg} width="20%" alt="discover"/>
+              <img src={CategoryImg} width="20%" alt="discover" className="homepage-icon"/>
             </Grid>
           </Grid>
         </Container> 
@@ -65,8 +66,9 @@ export default () => {
           An online library website for Myanmar Education
         </Typography>
       </div> 
-      <div css={css`
-        background-color: #fff;
+      <div 
+       style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}
+      css={css`
         padding: 40px;
         text-align: center;
         margin-bottom: 30px auto;

@@ -37,6 +37,7 @@ export default ({ data }) => (
                 }
             `}>
               <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+              alt={node.frontmatter.title}
               css={css`
                 @media screen and (max-width: 700px) {
                   box-shadow: none;

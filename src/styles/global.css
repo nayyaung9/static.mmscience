@@ -4,15 +4,14 @@
 
 :root {
   --appBar-text: #000;
-  
-  
 }
-body {
-  background-color: #eeeeee;
+body.light {
+  background-color: rgb(214, 214, 214);
   color: #000;
   --appBar-bg: #fff;
   --discover-text: #1ca086;
   --wiki-board: rgb(72, 191, 131);
+  --visited-a: rgb(0, 88, 129);
 }
 body.dark {
   background-color: #121212;
@@ -21,17 +20,23 @@ body.dark {
   --appBar-text: #fff;
   --discover-text: #ddd;
   --wiki-board: #2d2d2d;
+  --visited-a: rgb(173, 173, 173);
 }
 .MuiDrawer-paper {
   background-color: var(--appBar-bg) !important;
 }
-
-a {
-  /* color: #000; */
+.responsive-image-border {
+  /* height: 180px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center; */
+}
+a:visited {
+  color: var(--visited-a);
 }
 a:hover {
   text-decoration: none !important;
-  color: #000;
+  color: var(--appBar-text);
 }
 body {
   font-family: 'Rubik', 'Pyidaungsu', sans-serif;

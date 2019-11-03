@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
+import { Badge } from 'reactstrap'
 
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
@@ -18,7 +19,7 @@ export default ({ data }) => {
       <Layout>
         <main style={{ marginTop: '80px'}}>
 
-        <Helmet title="MM Science | A Online Library website for Myanmar Education" > 
+        <Helmet title="MM Science | An Online Library website for Myanmar Education" > 
           <html lang="en" />
           <meta name="description" content="A Online Library website for Myanmar Educatio" />
           <meta name="image" content="/src/assets/mmscience0.jpg" />
@@ -36,7 +37,6 @@ export default ({ data }) => {
             padding-top: 10px;
           `}>
         
-        
           {data.allMarkdownRemark.edges.map(({ node }) => (
               
             <Grid item xs={12} sm={4} 
@@ -49,13 +49,16 @@ export default ({ data }) => {
             `}>
               <div className="blog__post__items" style={{ height: '100%', backgroundColor: 'var(--appBar-bg)' }}>
                 <div 
+                className="responsive-image-border"
                   css={css`
-                  
+
                     @media screen and (max-width: 700px) {
                       padding: 10px;
                     }
                 `}>
                   <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+                  className="responsive-image"
+                  alt={node.frontmatter.title}
                     css={css`
                       @media screen and (max-width: 700px) {
                         box-shadow: none;
@@ -120,7 +123,9 @@ export default ({ data }) => {
               </Link>
 
               <div className="article__label"> 
-                {node.frontmatter.tags}
+                <Badge color="success">
+                  {node.frontmatter.tags}
+                </Badge>
               </div>
             </div> 
               </div>
@@ -132,7 +137,11 @@ export default ({ data }) => {
           padding: 30px;
           text-align: center;
         `}>
-          <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }} href='/wiki/'>read more</Button>
+          <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)' }}>
+            <Link to='/wiki/' alt="feed" style={{ color: 'var(--appBar-text)' }}>
+              read more
+            </Link>
+          </Button>
         </div>
         
       </main>

@@ -1,9 +1,10 @@
+
 module.exports = {
   pathPrefix: "/mmscience",
   siteMetadata: {
     title: `MM Science`,
     description:
-      "MMScience is a online library website for Myanmar High School Students.",
+      "MMScience is an online library website for Myanmar High School Students.",
     url: "https://mmscience-2019.firebaseapp.com", // No trailing slash allowed!
     image: "./src/assets/mmscience0.jpg", // Path to your image you placed in the 'static' folder
   },
@@ -15,13 +16,12 @@ module.exports = {
         path: `${__dirname}/contents`,
       },
     },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `MM Science`,
         short_name: `MM Science`,
-        description: `MMScience is a online library website for Myanmar Education`,
+        description: `MMScience is an online library website for Myanmar Education`,
         "icons": [
           {
             "src": "/icons/small-app-icon.jpg",
@@ -36,8 +36,15 @@ module.exports = {
         ],
         start_url: `/`,
         background_color: `#f7f0eb`,
-        theme_color: `#fff`,
+        theme_color: `${process.env.GATSBY_THEME_COLOR}`,
         display: `standalone`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      // Blank options, equivalent to string-only plugin
+      options: {
+        precachePages: [`/wiki/*`, `/discover/*`],
       },
     },
     `gatsby-plugin-sharp`,

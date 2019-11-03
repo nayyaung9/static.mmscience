@@ -72,6 +72,7 @@ export default ({data}) => {
           `}>
             <div className="blog__post__items" >
               <div 
+              style={{ height: '100%', backgroundColor: 'var(--appBar-bg)' }}
                 css={css`
                   @media screen and (max-width: 700px) {
                     padding: 10px;
@@ -79,6 +80,7 @@ export default ({data}) => {
                 `}
               >
                 <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
+                alt={node.frontmatter.title}
                 css={css`
                   @media screen and (max-width: 700px) {
                     box-shadow: none;
