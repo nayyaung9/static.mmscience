@@ -1,5 +1,5 @@
 ---
-path: "/mechanics/artificial-intelligence"
+path: "mechanics/artificial-intelligence"
 title: "ကမ္ဘာမှာ နည်းပညာတွေ အမျိုးမျိုး ပေါ်ခဲ့တာ ဘာလို့ AI ကျမှ တချို့ ပညာရှင်တွေက စိုးရိမ်နေကြတာလဲ"
 date: "2019-11-03"
 tags: ['Technology']

@@ -8,12 +8,11 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-// import Layout from "../components/layout"
 import Master from '../components/master'
-
 import FeatureImage from '../components/posts/featureImage'
 import Author from '../components/posts/author'
 import Content from '../components/posts/content'
+import Reaction from '../components/posts/reaction'
 
 export default ({data}) => {
 
@@ -39,7 +38,7 @@ export default ({data}) => {
               <div className="article">
                 <Img fluid={featuredImgFluid} loading="lazy" />
                 <div className="article__content" style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}>
-                  <Typography variant="h3">
+                  <Typography style={{ fontSize: '20px' }}>
                     {post.frontmatter.title}
                   </Typography>
                   <div className="article_role_play">
@@ -55,7 +54,10 @@ export default ({data}) => {
                       </div>
                     </div>
                   </div>
-                  <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                  <Typography variant="subtitle1">
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                  </Typography>
+                    <Reaction path={post.path} />
                 </div>
               </div>
             </Grid>
@@ -64,8 +66,8 @@ export default ({data}) => {
 
         <Container maxWidth="md">
           <Grid container spacing={3} justify="center">
-            <Grid item xs={12} sm={9} style={{ padding: 0 }}>
-              <div className="content_writer">
+            <Grid item xs={12} sm={9} style={{ padding: 0, margin: '30px auto' }}>
+              <div className="content_writer" style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}>
                 <Author 
                   src={authorPic.src} 
                   name={post.frontmatter.author} 
@@ -79,7 +81,7 @@ export default ({data}) => {
 
       
        
-        <Typography variant="body2" style={{ margin: '20px auto'}}>
+        <Typography variant="h6" style={{ margin: '20px auto', color: 'var(--appBar-text)'}}>
           Awesome articles
         </Typography>
 
@@ -142,6 +144,7 @@ export const query = graphql `
       html
       frontmatter {
         title
+        path
         author
         authorPic {
           childImageSharp {

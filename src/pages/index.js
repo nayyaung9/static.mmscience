@@ -121,6 +121,7 @@ query {
       node {
         id
         frontmatter {
+          path
           title
           author
           authorPic {
@@ -130,7 +131,7 @@ query {
               }
             }
           }
-          date(formatString: "DD MMM, YYYY")
+          date(fromNow: true)
           tags
           featuredImage {
             childImageSharp {
