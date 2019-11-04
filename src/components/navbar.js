@@ -24,6 +24,10 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby';
 import { css } from '@emotion/core'
 import Theme from '../components/theme'
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+// import Avatar from '@material-ui/core/Avatar';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import '../styles/global.css';
 
 const drawerWidth = 240;
@@ -100,6 +104,22 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
+  const [auth, setAuth] = React.useState(true);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const account = Boolean(anchorEl);
+
+  const handleChange = event => {
+    setAuth(event.target.checked);
+  };
+
+  const handleMenu = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -132,11 +152,12 @@ export default function PersistentDrawerLeft() {
           `}>
             <Link to='/' style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }} alt="home">MM Science</Link>
           </Typography>
-          <Button color="inherit">
+          
             <Link to='/search/' style={{ color: 'var(--appBar-text)' }} alt="mmscience about">
-              <SearchIcon />
+              <Button color="inherit">
+                <SearchIcon />
+              </Button>
             </Link>
-          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -158,6 +179,12 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
+          <ListItem button style={{ color: 'var(--appBar-text)' }}>
+            <ListItemIcon>   
+                <AccountCircle style={{ color: 'var(--appBar-text)' }}/>
+            </ListItemIcon>
+            <ListItemText primary="Profile" />
+          </ListItem>
           <Link to='/' alt="home">
             <ListItem button style={{ color: 'var(--appBar-text)' }}>
               <ListItemIcon> <HomeIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>

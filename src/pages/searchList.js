@@ -18,12 +18,16 @@ export default class SearchList extends Component {
 
   render() {
     return (
-			<Layout style={{ marginTop: '80px'}}>
+      <React.Fragment>
 				<div 
         css={css`
           background: #fff;
           border-radius: 0.5rem;
           padding: 10px;
+          @media screen and (max-width: 700px) { 
+
+            padding: 0;
+          }
         `}>
 					<TextField
 						id="outlined-basic"
@@ -50,13 +54,10 @@ export default class SearchList extends Component {
                 <Badge color="success">
                   { page.tags.join(`,`) }
                 </Badge>
-               
-                
-                by {page.author}
               </div>
 						))}
 					</div>
-				</Layout>
+				</React.Fragment>
      
     )
   }

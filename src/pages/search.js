@@ -2,9 +2,9 @@ import React from "react"
 import Layout from '../components/layout'
 import { StaticQuery, Link } from "gatsby"
 import { graphql } from "gatsby"
-
+import { css } from '@emotion/core'
 import SearchList from "./searchList"
-import SuggestedList from './suggestedList'
+import Typography from '@material-ui/core/Typography'
 
 const Search = () => (
   <StaticQuery
@@ -56,12 +56,11 @@ const Search = () => (
       }
     `}
     render={data => (
-      <Layout>
+    
         <header style={{ marginTop: '80px'}}>
           <SearchList searchIndex={data.siteSearchIndex.index} />
-          <SuggestedList suggestList={data.allMarkdownRemark.edges} />
         </header>
-      </Layout>
+      
     )}
   />
 )
