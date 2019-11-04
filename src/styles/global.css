@@ -68,6 +68,7 @@ body {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   cursor: pointer;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 a.nav-link:hover {
@@ -114,25 +115,25 @@ a.nav-link:hover {
   box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
   border-radius: .25rem;
 }
-
+.responsive-image-border {
+  padding: 10px;
+}
+.responsive-image {
+  height: 200px;
+  border-radius: 10px;
+}
 @media screen and (max-width: 700px) {
   .singal_content, .wiki__article {
     padding: 0 !important;
   }
   .blog__post__items {
     box-shadow: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     margin-bottom: 20px;
     background-color: #fff;
     /* box-shadow: 3px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); */
     box-shadow: -1px 1px 10px 4px rgba(0,0,0,0.16);
-  }
-  .responsive-image-border {
-    padding: 10px;
-  }
-  .responsive-image {
-    border-radius: 10px;
   }
 }
 

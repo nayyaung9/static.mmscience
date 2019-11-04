@@ -17,6 +17,7 @@ export default (props) => {
           color: inherit;
       `}>
         <Typography variant="body1"
+         style={{ color: 'var(--appBar-text)' }}
           css={css` 
             font-weight: bold;
         `}> 

@@ -1,14 +1,17 @@
 import React from 'react'
-import Img from 'gatsby-image'
 
 export default (props) => {
   return (
     <div className="responsive-image-border">
-      <Img 
-        fluid={props.src} 
-        alt={props.alt}
-        className="responsive-image"
-      />
+      <div className="responsive-image"
+      style={{
+        backgroundImage: `url(${props.src.src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: '#cccccc'
+      }}
+      >
+      </div>
     </div>
   )
 }

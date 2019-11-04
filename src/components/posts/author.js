@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 export default (props) => {
   return (
-    <div className="article_role_play">
+    <div className="article_role_play" style={{ color: 'var(--appBar-text)' }}>
       <div className="article_owner">
         <img src={props.src} alt={props.name} className="author__pic" />
       </div>
