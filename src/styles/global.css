@@ -111,9 +111,11 @@ a.nav-link:hover {
 .article__content {
   background-color: #fff;
 }
-.content__image {
-  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-  border-radius: .25rem;
+
+.content_writer {
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 10px;
 }
 .responsive-image-border {
   padding: 10px;

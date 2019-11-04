@@ -53,7 +53,6 @@ export default ({ data }) => {
           <Grid container 
             spacing={3} 
             direction="row"
-            justify="center"
             alignItems="stretch">
           
         
