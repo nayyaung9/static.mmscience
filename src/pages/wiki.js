@@ -11,6 +11,10 @@ import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
+import FeatureImage from '../components/posts/featureImage'
+import Author from '../components/posts/author'
+import Content from '../components/posts/content'
+
 export default ({ data }) => {
   return (
 
@@ -54,98 +58,38 @@ export default ({ data }) => {
           
         
             {data.allMarkdownRemark.edges.map(({ node }) => (
+               
                <Grid item xs={12} sm={4} 
                key={node.id} 
                css={css`
                  @media screen and (max-width: 700px) {
-                   padding: 0 !important;
+                   padding: 0 12px !important;
                    margin-bottom: 20px !important;
                  }        
              `}>
-               <div className="blog__post__items" style={{ height: '100%', backgroundColor: 'var(--appBar-bg)' }}>
-                 <div 
-                 className="responsive-image-border"
-                   css={css`
- 
-                     @media screen and (max-width: 700px) {
-                       padding: 10px;
-                     }
-                 `}>
-                   <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
-                   className="responsive-image"
-                   alt={node.frontmatter.title}
-                     css={css`
-                       @media screen and (max-width: 700px) {
-                         box-shadow: none;
-                         border-radius: 20px;
-                       }
-                   `}/>
+               <div 
+                 className="blog__post__items" 
+                 style={{ height: '100%', backgroundColor: 'var(--appBar-bg)' }}
+               >
+                 <FeatureImage 
+                   src={node.frontmatter.featuredImage.childImageSharp.fluid}
+                   alt={node.frontmatter.title} 
+                 />
+                 <div className="author_field">
+                   <Author 
+                     src={node.frontmatter.authorPic.childImageSharp.fluid.src} 
+                     name={node.frontmatter.author} 
+                     date={node.frontmatter.date} 
+                     timeToRead={node.timeToRead} 
+                   />
                  </div>
-                 <div 
-                   style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}
-                   css={css`
-                     padding: .25rem 1rem 1rem 1rem;
-                     background: #fff;
-                     @media screen and (max-width: 700px) {
-                       border-radius: 20px;
-                     }
-                 `}>
-                   
-                   <div
-                     css={css`
-                       display: flex;
-                       flex-direction: row;
-                       margin: 10px auto;
-                   `}>
-                     <div className="article_owner">
-                       <img src={node.frontmatter.authorPic.childImageSharp.fluid.src} alt={node.frontmatter.author} 
-                         css={css`
-                           width: 40px;
-                           height: 40px;
-                           border-radius: 100%;
-                       `}/>
-                     </div>
-                     <div
-                       css={css`
-                         margin-left: 12px;
-                     `}>
-                       <span css={css`
-                         font-weight: 700px;
-                       `}>
-                         {node.frontmatter.author}
-                       </span>
-                     <div>
-                     <span className="article__meta" style={{ color: 'var(--appBar-text)' }}> 
-                       {node.frontmatter.date} · {node.timeToRead} min read 
-                     </span>
-                   </div>
-                 </div>
-               </div>
- 
-               <Link
-                 to={node.fields.slug}
-                 alt={node.frontmatter.title}
-                 css={css`
-                   text-decoration: none;
-                   color: inherit;
-               `}>
-                 <Typography variant="body1"
-                   css={css` 
-                     font-weight: bold;
-                 `}> 
-                   {node.frontmatter.title}
-                 </Typography>
-               </Link>
- 
-               <div className="article__label"> 
-                 <Badge color="success">
-                   {node.frontmatter.tags}
-                 </Badge>
-               </div>
-             </div> 
+                 <Content 
+                   to={node.fields.slug}
+                   title={node.frontmatter.title}
+                   tags={node.frontmatter.tags}
+                 />
                </div>
              </Grid>
-             
             
             ))}
           </Grid>
