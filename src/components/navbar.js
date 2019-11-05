@@ -24,10 +24,8 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby';
 import { css } from '@emotion/core'
 import Theme from '../components/theme'
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-// import Avatar from '@material-ui/core/Avatar';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import SystemUpdateIcon from '@material-ui/icons/SystemUpdate';
 import '../styles/global.css';
 
 const drawerWidth = 240;
@@ -106,19 +104,6 @@ export default function PersistentDrawerLeft() {
 
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const account = Boolean(anchorEl);
-
-  const handleChange = event => {
-    setAuth(event.target.checked);
-  };
-
-  const handleMenu = event => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <div className={classes.root}>
@@ -179,9 +164,9 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <ListItem button style={{ color: 'var(--appBar-text)' }}>
+          <ListItem button style={{ color: 'var(--appBar-text)' }} disabled>
             <ListItemIcon>   
-                <AccountCircle style={{ color: 'var(--appBar-text)' }}/>
+              <AccountCircle style={{ color: 'var(--appBar-text)' }}/>
             </ListItemIcon>
             <ListItemText primary="Profile" />
           </ListItem>
@@ -206,6 +191,12 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider />
         <List>
+          <Link to='/updates' alt="home">
+            <ListItem button style={{ color: 'var(--appBar-text)' }}>
+              <ListItemIcon> <SystemUpdateIcon  style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
+              <ListItemText primary="Updates" />
+            </ListItem>
+          </Link>
           <Link to='/help/' style={{ color: 'var(--appBar-text)' }} alt="help center">
             <ListItem button>
               <ListItemIcon> <HelpIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>

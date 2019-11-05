@@ -1,87 +1,66 @@
 import React from "react"
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { Badge } from 'reactstrap'
-import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
 
-import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
+
+import FeatureImage from '../components/posts/featureImage'
+import Author from '../components/posts/author'
+import Content from '../components/posts/content'
 
 import Layout from '../components/layout'
 
 export default ({ data }) => (
   <Layout>
     
-    <Helmet title="MM Science | A Online Library website for Myanmar Education" />
-    
-    <Grid container spacing={3} 
-    css={css`
-      padding-top: 10px;
-    `}>
-        
-      {data.allMarkdownRemark.edges.map(({ node }) => (
+    <main style={{ marginTop: '80px'}}>
+      <Helmet title="MM Science | A Online Library website for Myanmar Education" />
+      
+      <Grid container spacing={3} 
+        direction="row"
+        alignItems="stretch"
+      css={css`
+        padding-top: 10px;
+      `}>
           
-        <Grid item xs={12} sm={4} 
-          key={node.id} 
-          css={css`
-            @media screen and (max-width: 700px) {
-              padding: 0 !important;
-            }        
-        `}>
-          <div className="blog__post__items">
-            <div 
-              css={css`
-                @media screen and (max-width: 700px) {
-                  padding: 10px;
-                }
-            `}>
-              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} 
-              alt={node.frontmatter.title}
-              css={css`
-                @media screen and (max-width: 700px) {
-                  box-shadow: none;
-                  border-radius: 20px;
-                }
-              `}/>
-            </div>
-            <div 
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+            
+            <Grid item xs={12} sm={4} 
+            key={node.id} 
             css={css`
-              padding: 1rem 1rem;
-              background: #fff;
               @media screen and (max-width: 700px) {
-                border-radius: 20px;
-              }
-            `}>
-              <Link
-                to={node.fields.slug}
-                alt={node.fields.slug}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-              `}>
-                <Typography variant="body1"
-                css={css` 
-                  font-weight: bold;
-                `}> 
-                  {node.frontmatter.title}
-                </Typography>
-                <Typography paragraph style={{ margin: '0'}}>
-                  {node.excerpt}
-                </Typography>
-              </Link>
-              <div className="article__label"> 
-                <Badge color="success">{node.frontmatter.tags}</Badge>  
+                padding: 0 12px !important;
+                margin-bottom: 20px !important;
+              }        
+          `}>
+            <div 
+              className="blog__post__items" 
+              style={{ height: '100%', backgroundColor: 'var(--appBar-bg)' }}
+            >
+              <FeatureImage 
+                src={node.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={node.frontmatter.title} 
+              />
+              <div className="author_field">
+                <Author 
+                  src={node.frontmatter.authorPic.childImageSharp.fluid.src} 
+                  name={node.frontmatter.author} 
+                  date={node.frontmatter.date} 
+                  timeToRead={node.timeToRead} 
+                />
               </div>
-              <span className="article__meta"> 
-                {node.frontmatter.date} · {node.timeToRead} min read 
-              </span>
+              <Content 
+                to={node.fields.slug}
+                title={node.frontmatter.title}
+                tags={node.frontmatter.tags}
+              />
             </div>
-          </div>
-        </Grid>
-         
-      ))}
-    </Grid>
+          </Grid>
+          
+        ))}
+      </Grid>
+    </main>
   </Layout>
 );
 
@@ -94,7 +73,15 @@ query {
         id
         frontmatter {
           title
-          date(formatString: "DD MMMM, YYYY")
+          author
+          authorPic {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          date(fromNow: true)
           tags
           featuredImage {
             childImageSharp {
