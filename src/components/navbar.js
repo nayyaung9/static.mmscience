@@ -26,6 +26,7 @@ import { css } from '@emotion/core'
 import Theme from '../components/theme'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import SystemUpdateIcon from '@material-ui/icons/SystemUpdate';
+import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
 import '../styles/global.css';
 
 const drawerWidth = 240;
@@ -102,9 +103,6 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
-  const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -163,7 +161,7 @@ export default function PersistentDrawerLeft() {
           </IconButton>
         </div>
         <Divider />
-        <List>
+        <List>          
           <ListItem button style={{ color: 'var(--appBar-text)' }} disabled>
             <ListItemIcon>   
               <AccountCircle style={{ color: 'var(--appBar-text)' }}/>
@@ -188,6 +186,12 @@ export default function PersistentDrawerLeft() {
               <ListItemText primary="Discover" />
             </ListItem>
           </Link>
+          <Link to='/videos' alt="video">
+            <ListItem button style={{ color: 'var(--appBar-text)' }}>
+              <ListItemIcon> <OndemandVideoIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
+              <ListItemText primary="videos" />
+            </ListItem>
+          </Link> 
         </List>
         <Divider />
         <List>

@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { Helmet } from "react-helmet"
 import Layout from '../components/layout'
 import ReadType from '../components/read-type'
-import { Badge } from 'reactstrap';
-import Img from 'gatsby-image'
 import '../styles/global.css'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography';
@@ -17,7 +15,6 @@ import Content from '../components/posts/content'
 
 export default ({ data }) => {
   return (
-
     <React.Fragment>
       <div
       style={{ backgroundColor: 'var(--wiki-board)'}} 
@@ -105,7 +102,7 @@ query {
       title
     }
   }
-  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })  {
+  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC})   {
     totalCount
     edges {
       node {

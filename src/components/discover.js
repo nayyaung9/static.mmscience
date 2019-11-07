@@ -7,6 +7,7 @@ import { Link } from 'gatsby'
 export default ({ tags }) => {
   return (
     <div
+    className="tags_scrollbar"
     css={css`
       overflow: auto;
       white-space: nowrap;

@@ -5,13 +5,16 @@ import { Helmet } from 'react-helmet'
 
 import Grid from '@material-ui/core/Grid'
 import FeatureImage from '../components/posts/featureImage'
+import Cover from '../components/posts/cover'
 import Author from '../components/posts/author'
 import Content from '../components/posts/content'
 import Layout from '../components/layout'
 
 export default ({ data }) => (
   <Layout>
-    
+
+    <Cover title="Science" totalCount={data.allMarkdownRemark.totalCount} />
+
     <main style={{ marginTop: '80px'}}>
       <Helmet title="MM Science | A Online Library website for Myanmar Education" />
       

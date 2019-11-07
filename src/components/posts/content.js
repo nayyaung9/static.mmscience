@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Typography from '@material-ui/core/Typography'
-import { Badge } from 'reactstrap'
 import { css } from '@emotion/core'
 
 export default (props) => {

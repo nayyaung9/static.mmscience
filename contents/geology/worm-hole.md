@@ -5,6 +5,7 @@ tags: ['Science']
 featuredImage: '../images/worm-hole.jpg'
 author: "Newstein"
 authorPic: '../images/author/Newstein.jpg'
+type: 'text'
 ---
 ဟိုတစ်နေ့က ကျွန်တော် တွင်းနက်တွေအကြောင်းဆွေးနွေးခဲ့ပြီးပြီဆိုတော့ ဒီနေ့ မှာတော့ တွင်းနက်တွေကို​ အခြေပြုပြီး ဖြစ်လာတယ့် တွင်းလှိုက်ခေါင်းတွေနဲ့ ပတ်သတ်ပြီး သိသလောက် ပြောပြပေးမှာဖြစ်ပါတယ်။
 

@@ -5,6 +5,7 @@ tags: ['Physics']
 featuredImage: '../images/Parallel-world.jpg'
 author: "MM Science"
 authorPic: '../images/author/mmscience.jpg'
+type: 'text'
 ---
 "လက်​ရှိ​နေထိုင်​​နေကြတဲ့ကမ႓ာကြီးနဲ့
 အပြိုင်​ဖြစ်​​တည်​နေတဲ့ကမ႓ာ​လောက(Parallel world)​တွေ၊

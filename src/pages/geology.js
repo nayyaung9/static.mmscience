@@ -8,10 +8,13 @@ import FeatureImage from '../components/posts/featureImage'
 import Author from '../components/posts/author'
 import Content from '../components/posts/content'
 import Layout from '../components/layout'
+import Cover from '../components/posts/cover'
 
 export default ({ data }) => (
   <Layout>
     
+    <Cover title="Geology" totalCount={data.allMarkdownRemark.totalCount} />
+
     <main style={{ marginTop: '80px'}}>
       <Helmet title="MM Science | A Online Library website for Myanmar Education" />
       

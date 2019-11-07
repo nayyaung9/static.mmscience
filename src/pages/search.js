@@ -1,10 +1,8 @@
 import React from "react"
 import Layout from '../components/layout'
-import { StaticQuery, Link } from "gatsby"
+import { StaticQuery } from "gatsby"
 import { graphql } from "gatsby"
-import { css } from '@emotion/core'
 import SearchList from "./searchList"
-import Typography from '@material-ui/core/Typography'
 
 const Search = () => (
   <StaticQuery
@@ -56,11 +54,11 @@ const Search = () => (
       }
     `}
     render={data => (
-    
+      <Layout>
         <header style={{ marginTop: '80px'}}>
           <SearchList searchIndex={data.siteSearchIndex.index} />
         </header>
-      
+      </Layout>
     )}
   />
 )

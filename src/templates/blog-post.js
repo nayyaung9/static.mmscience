@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { Helmet } from "react-helmet"
 import Img from 'gatsby-image'
@@ -31,7 +31,7 @@ export default ({data}) => {
             <Grid item xs={12} sm={9}
                css={css`
                @media screen and (max-width: 700px) {
-                 padding: 0 2px !important;
+                 padding: 0 !important;
                  margin-bottom: 20px !important;
                }        
            `}>
@@ -166,7 +166,10 @@ export const query = graphql `
       }
       timeToRead
     }
-    allMarkdownRemark(limit: 3, sort: {order: DESC, fields: frontmatter___tags}) {
+    allMarkdownRemark(
+      limit: 3, 
+      sort: {order: DESC, fields: frontmatter___tags}
+    ){
       totalCount
       edges {
         node {

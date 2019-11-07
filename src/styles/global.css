@@ -2,8 +2,15 @@
 @import url('https://mmwebfonts.comquas.com/fonts/?font=pyidaungsu');
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
 
+.tags_scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* body::-webkit-scrollbar { 
+  display: none;  
+} */
 :root {
   --appBar-text: #000;
+  
 }
 body.light {
   background-color: rgb(248, 248, 248);
@@ -122,7 +129,7 @@ a.nav-link:hover {
 }
 .responsive-image {
   height: 160px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .reaction-bar {
   padding: 2px;

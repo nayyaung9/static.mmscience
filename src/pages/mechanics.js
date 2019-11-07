@@ -8,13 +8,15 @@ import Grid from '@material-ui/core/Grid'
 import FeatureImage from '../components/posts/featureImage'
 import Author from '../components/posts/author'
 import Content from '../components/posts/content'
-
+import Cover from '../components/posts/cover'
 import Layout from '../components/layout'
 
 export default ({ data }) => (
   <Layout>
     
-    <main style={{ marginTop: '80px'}}>
+    <Cover title="Mechanics" totalCount={data.allMarkdownRemark.totalCount} />
+
+    <main style={{ marginTop: '35px'}}>
       <Helmet title="MM Science | A Online Library website for Myanmar Education" />
       
       <Grid container spacing={3} 

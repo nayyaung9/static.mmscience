@@ -8,12 +8,26 @@ module.exports = {
     url: "https://mmscience-2019.firebaseapp.com", // No trailing slash allowed!
     image: "./src/assets/mmscience0.jpg", // Path to your image you placed in the 'static' folder
   },
-  plugins: [
+  plugins:[
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contents`,
         path: `${__dirname}/contents`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
       },
     },
     {
@@ -67,10 +81,25 @@ module.exports = {
           node.frontmatter.tags !== 'exempt',
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+        {
+          resolve: "gatsby-remark-embed-video",
+          options: {
+            width: 800,
+            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+            height: 400, // Optional: Overrides optional.ratio
+            related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+            noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
+          }
+        }
+        ]
+      }
+    },
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-dark-mode`
+    `gatsby-plugin-dark-mode`,
+    `gatsby-transformer-sharp`
   ],
 }

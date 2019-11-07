@@ -5,30 +5,19 @@ import { Helmet } from 'react-helmet'
 
 import Grid from '@material-ui/core/Grid'
 import FeatureImage from '../components/posts/featureImage'
+import Cover from '../components/posts/cover'
 import Author from '../components/posts/author'
 import Content from '../components/posts/content'
 import Layout from '../components/layout'
-import Typography from '@material-ui/core/Typography';
 
 export default ({ data }) => (
   <React.Fragment>
 
-    <div
-      style={{ backgroundColor: 'var(--wiki-board)'}} 
-      css={css`
-          padding: 20px;
-          color: #fff;
-          padding: 100px 0 40px 0;
-          text-align: center;
-        `}>
-          <Typography variant="h6">
-            Atom
-          </Typography>
-      </div>
-
+    <Cover title="Atom" totalCount={data.allMarkdownRemark.totalCount} />
+  
     <Layout>
     
-      <main style={{ marginTop: '80px'}}>
+      <main style={{ marginTop: '30px'}}>
         <Helmet title="MM Science | A Online Library website for Myanmar Education" />
         
         <Grid container spacing={3} 

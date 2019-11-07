@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import TextField from '@material-ui/core/TextField'
 import { css } from '@emotion/core'
-import Layout from '../components/layout'
 import { Index } from "elasticlunr"
 import { Link } from 'gatsby'
 import { Badge } from 'reactstrap'
@@ -41,18 +40,17 @@ export default class SearchList extends Component {
 					
 					<div style={{ marginTop: '30px' }}>
 						{this.state.results.map(page => (
-						
-
               <div 
               key={page.id}
               css={css`
                 padding: 10px;
                 background: #fff;
                 border-radius: 0.5rem;
+                margin-bottom: 10px;
               `}>
 	            <Link to={"/" + page.path}>{page.title}</Link> <br />
                 <Badge color="success">
-                  { page.tags.join(`,`) }
+                  { page.tags.join(`, `) }
                 </Badge>
               </div>
 						))}
