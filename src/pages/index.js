@@ -186,12 +186,16 @@ export default ({ data }) => {
 
         <main style={{ marginTop: '80px'}}>
 
-        <Helmet title="MM Science | An Online Library website for Myanmar Education" > 
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+          { name: 'description', content: 'An Online Library website for Myanmar Education' },
+          { name: 'keywords', content: 'reactjs, pwa, gatsbyjs' },
+          ]}
+        >
           <html lang="en" />
-          <meta name="description" content="A Online Library website for Myanmar Educatio" />
-          <meta name="image" content="/src/assets/mmscience0.jpg" />
-        </Helmet> 
-
+        </Helmet>
+        
         <Grid container spacing={3}>
           <TagBar tags={data.allMarkdownRemark.group}/>
         </Grid>
@@ -288,6 +292,7 @@ query {
         frontmatter {
           path
           title
+          tags
           author
           authorPic {
             childImageSharp {

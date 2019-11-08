@@ -3,6 +3,7 @@ module.exports = {
   pathPrefix: "/mmscience",
   siteMetadata: {
     title: `MM Science`,
+    siteUrl: `https://mmscience-2019.firebaseapp.com`,
     description:
       "MMScience is an online library website for Myanmar High School Students.",
     url: "https://mmscience-2019.firebaseapp.com", // No trailing slash allowed!
@@ -52,6 +53,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#2d2d2d`,
         display: `standalone`,
+        legacy: true,
       },
     },
     {
@@ -97,6 +99,15 @@ module.exports = {
         }
         ]
       }
+    },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+      host: `https://mmscience-2019.firebaseapp.com`,
+      sitemap: `https://mmscience-2019.firebaseapp.com/sitemap.xml`,
+      policy: [{ userAgent: '*', disallow: '' }],
+      },
     },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-dark-mode`,

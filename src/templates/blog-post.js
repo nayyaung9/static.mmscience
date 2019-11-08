@@ -123,7 +123,7 @@ export default ({data}) => {
                   </div>
                   <Content 
                     to={node.fields.slug}
-                    title={node.frontmatter.title}
+                    title={node.excerpt}
                     tags={node.frontmatter.tags}
                   />
                 </div>
@@ -166,10 +166,7 @@ export const query = graphql `
       }
       timeToRead
     }
-    allMarkdownRemark(
-      limit: 3, 
-      sort: {order: DESC, fields: frontmatter___tags}
-    ){
+    allMarkdownRemark(limit: 3, sort: {fields: frontmatter___date, order: ASC}){
       totalCount
       edges {
         node {
@@ -197,7 +194,7 @@ export const query = graphql `
           fields {
             slug
           }
-          excerpt
+          excerpt(truncate: true)
           timeToRead
         }
       }
