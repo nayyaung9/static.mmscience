@@ -1,58 +1,35 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import { css } from '@emotion/core'
-
+import { Link } from 'gatsby'
+import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import '../styles/global.css'
-import BlogPost from '../assets/blog-post-item.png'
-import CategoryImg from '../assets/discover.png'
+import BlogPost from '../assets/feedIcon.png'
+import CategoryImg from '../assets/tagIcon.svg'
+import VideoIcon from '../assets/videoIcon.svg'
+
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+  input: {
+    display: 'none',
+  },
+}));
+
 
 export default () => {
+  const classes = useStyles();
   return (
     <React.Fragment>
-      <div 
-      style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}
-      css={css`
-        padding: 30px;
-        text-align: center;
-      `}>
-        <Typography variant="h5" 
-          gutterBottom
-          css={css`
-            font-weight: bold;
-        `}>
-          လမ်းညွှန်
-        </Typography>
 
-        <Container maxWidth="md">
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <img src={BlogPost} width="20%" alt="blog-post-item" className="homepage-icon" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Typography paragraph>
-                wiki ( ကဏ္ဍစုံစာမျက်နှာ ) သို့သွားလိုပါက <br />
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <Typography paragraph>
-                Discover ( ကဏ္ဌအလိုက် ခွဲခြားမှု စာမျက်နှာ ) သို့
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <img src={CategoryImg} width="20%" alt="discover" className="homepage-icon"/>
-            </Grid>
-          </Grid>
-        </Container> 
-
-      </div>
-       <div css={css`
-        background-color: #151515;
-        color: #FBC403;
+    <div 
+    style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}
+    css={css`
         padding: 40px;
         text-align: center;
       `}>
@@ -66,31 +43,104 @@ export default () => {
           An online library website for Myanmar Education
         </Typography>
       </div> 
+
       <div 
-       style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}
+      style={{ color: 'var(--appBar-text)'}}
       css={css`
-        padding: 40px;
+        padding: 30px;
         text-align: center;
-        margin-bottom: 30px auto;
       `}>
-        <Typography variant="h5">
-          Read More in Discover
-        </Typography>
-        <Typography paragraph>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unkn
+        <Typography variant="h5" 
+          gutterBottom
+          css={css`
+            font-weight: bold;
+        `}>
+          လမ်းညွှန်
         </Typography>
 
-        <Container maxWidth="sm">
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={6}>
-              <Button variant="outlined" color="primary">Learn more</Button>
+        <Container maxWidth="md">
+          <Grid container spacing={3}
+           direction="row"
+           justify="center"
+           alignItems="stretch"
+           css={css`
+            padding-top: 10px;
+        `}>
+            <Grid item xs={12} sm={4}>
+              <div 
+              style={{ backgroundColor: 'var(--appBar-bg)' }}
+              className="navigation__board" 
+              >
+                <div className="navigation__item">
+                  <img src={BlogPost} className="navigation__icon"/>
+                  <Divider />
+                </div>
+                <div className="navigation__content">
+                  <Typography paragraph>
+                    wiki ( ကဏ္ဍစုံစာမျက်နှာ ) 
+                  </Typography>
+
+                  <Link to='/wiki/' alt="feed">
+                    <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
+                      Learn in Wiki
+                    </Button>
+                  </Link>
+
+                </div>
+              </div>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Button variant="contained" color="primary">Learn more</Button>
+            <Grid item xs={12} sm={4}>
+              <div 
+                style={{ backgroundColor: 'var(--appBar-bg)' }}
+                className="navigation__board" 
+              >
+                <div className="navigation__item">
+                  <img src={VideoIcon} className="navigation__icon"/>
+                  <Divider />
+                </div>
+                <div className="navigation__content">
+                  <Typography paragraph>
+                    video များကြည့်ရှုရန်
+                  </Typography>
+
+                  <Link to='/videos/' alt="feed">
+                    <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
+                      watch & learn
+                    </Button>
+                  </Link>
+
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <div 
+                style={{ backgroundColor: 'var(--appBar-bg)' }}
+                className="navigation__board" 
+              >
+                <div className="navigation__item">
+                  <img src={CategoryImg} className="navigation__icon"/>
+                  <Divider />
+                </div>
+                <div className="navigation__content">
+                  <Typography paragraph>
+                    Discover ( ကဏ္ဌ ခွဲခြားမှု စာမျက်နှာ ) 
+                  </Typography>
+
+                  <Link to='/discover/' alt="feed">
+                    <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
+                      research in Discover
+                    </Button>
+                  </Link>
+
+                </div>
+              </div>
             </Grid>
           </Grid>
-        </Container> 
+        </Container>
+
       </div>
+       
+   
     </React.Fragment>
   )
 };

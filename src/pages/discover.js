@@ -20,7 +20,7 @@ const TagsPage = ({
 
     <h1>Discover</h1>
 
-    <Tabs tags={group}/>
+    <Tabs tags={group} />
   
   </Layout>
 )
@@ -54,6 +54,11 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___tags) {
+        nodes {
+          frontmatter {
+            title
+          }
+        }
         fieldValue
         totalCount
       }

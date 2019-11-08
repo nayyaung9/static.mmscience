@@ -197,7 +197,7 @@ export default ({ data }) => {
         </Helmet>
         
         <Grid container spacing={3}>
-          <TagBar tags={data.allMarkdownRemark.group}/>
+          <TagBar tags={data.allMarkdownRemark.group} />
         </Grid>
       
         <Grid container spacing={3} 

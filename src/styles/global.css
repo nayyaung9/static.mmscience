@@ -29,6 +29,21 @@ body.dark {
   --wiki-board: #2d2d2d;
   --visited-a: rgb(173, 173, 173);
 }
+.navigation__board {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.navigation__item {
+  padding: 10px;
+}
+.navigation__icon {
+  width: 30%;
+  margin-bottom: 10px;
+}
+.navigation__content {
+  padding: 10px;
+
+}
 .MuiDrawer-paper {
   background-color: var(--appBar-bg) !important;
 }
