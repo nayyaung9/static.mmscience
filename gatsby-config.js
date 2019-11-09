@@ -39,12 +39,12 @@ module.exports = {
         description: `MMScience is an online library website for Myanmar Education`,
         "icons": [
           {
-            "src": "/icons/small-app-icon.jpg",
+            "src": "/icons/MMscilcon192.png",
             "type": "image/png",
             "sizes": "192x192"
           },
           {
-            "src": "/icons/big-app-icon.jpg",
+            "src": "/icons/MMscilcon512.png",
             "type": "image/png",
             "sizes": "512x512"
           }
