@@ -26,18 +26,15 @@ export default class Tabs extends React.Component {
               <Link 
                 to={`/${kebabCase(tag.fieldValue)}/`}
                 alt={tag.fieldValue}
+                aria-label={tag.fieldValue}
+                style={{ color: 'var(--appBar-text)' }}
                 css={css`
-                  color: #1ca086;
                   text-decoration: none;
-                 
                 `}>
-              
                   <Typography variant="subtitle1">
                     {tag.fieldValue}
                   </Typography>
 
-              
-                 
                   <Typography variant="body2">
                     {tag.totalCount} articles
                   </Typography>

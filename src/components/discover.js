@@ -21,8 +21,10 @@ export default ({ tags }) => {
           margin: 20px 10px;
           border-radius: .25rem;
         `}>       
-          <Link to={`/${kebabCase(tag.fieldValue)}/`} alt={tag.fieldValue.toLowerCase()}>
-            <Button variant="contained" 
+          <Link to={`/${kebabCase(tag.fieldValue)}/`} alt={tag.fieldValue.toLowerCase()} aria-label={tag.fieldValue.toLowerCase()} >
+            <Button 
+              variant="contained" 
+              aria-label="tag-category"
               style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--discover-text)' }}
               css={css`
                 text-decoration: none;

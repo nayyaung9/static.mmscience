@@ -72,7 +72,7 @@ export default () => {
               className="navigation__board" 
               >
                 <div className="navigation__item">
-                  <img src={BlogPost} className="navigation__icon"/>
+                  <img src={BlogPost} alt="Wiki" aria-label="wiki" className="navigation__icon"/>
                   <Divider />
                 </div>
                 <div className="navigation__content">
@@ -80,8 +80,8 @@ export default () => {
                     wiki ( ကဏ္ဍစုံစာမျက်နှာ ) 
                   </Typography>
 
-                  <Link to='/wiki/' alt="feed">
-                    <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
+                  <Link to='/wiki/' alt="feed" aria-label="wiki">
+                    <Button variant="outlined" aria-label="learn in wiki" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
                       Learn in Wiki
                     </Button>
                   </Link>
@@ -95,7 +95,7 @@ export default () => {
                 className="navigation__board" 
               >
                 <div className="navigation__item">
-                  <img src={VideoIcon} className="navigation__icon"/>
+                  <img src={VideoIcon} alt="video" aria-label="video" className="navigation__icon"/>
                   <Divider />
                 </div>
                 <div className="navigation__content">
@@ -103,8 +103,8 @@ export default () => {
                     video များကြည့်ရှုရန်
                   </Typography>
 
-                  <Link to='/videos/' alt="feed">
-                    <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
+                  <Link to='/videos/' alt="feed" aria-label="feed">
+                    <Button variant="outlined" aria-label="watch & learn" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
                       watch & learn
                     </Button>
                   </Link>
@@ -118,7 +118,7 @@ export default () => {
                 className="navigation__board" 
               >
                 <div className="navigation__item">
-                  <img src={CategoryImg} className="navigation__icon"/>
+                  <img src={CategoryImg} alt="discover" aria-label="discover" className="navigation__icon"/>
                   <Divider />
                 </div>
                 <div className="navigation__content">
@@ -126,8 +126,8 @@ export default () => {
                     Discover ( ကဏ္ဌ ခွဲခြားမှု စာမျက်နှာ ) 
                   </Typography>
 
-                  <Link to='/discover/' alt="feed">
-                    <Button variant="outlined" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
+                  <Link to='/discover/' alt="feed" aria-label="discover">
+                    <Button variant="outlined" aria-label="research in discover" style={{ textAlign: 'center', backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)' }}>
                       research in Discover
                     </Button>
                   </Link>

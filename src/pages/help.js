@@ -12,7 +12,7 @@ export default () => {
             We are going to build this website in community.
         </Typography>
         <Typography variant="body1">
-          Contribute at: <a href='https://github.com/nayyaung9' style={{ color: 'blue'}} alt="project's contribution">Github</a>
+          Contribute at: <a href='https://github.com/nayyaung9' aria-label="github" style={{ color: 'blue'}} alt="project's contribution">Github</a>
         </Typography>
       </main>
     </Layout>

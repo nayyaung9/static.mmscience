@@ -73,7 +73,7 @@ const VideosHomePage = () => {
                   <Author src={videoCreator} name="Tun Lin Aung" date="Nov, 6" timeToRead="4:36"/>
                   <Typography paragraph>
                   ပါစကယ်တြိဂံရဲ့ သင်္ချာဆိုင်ရာ လျို့ဝှက်ချက်များ
-                  <Link to='facts/pascal-triangle/'>စာသား သီးသန့် ဖတ်ရှုရန်</Link>
+                  <Link to='facts/pascal-triangle/' alt="pascal-triangle" aria-label="pascal-triangle" >စာသား သီးသန့် ဖတ်ရှုရန်</Link>
                   </Typography>
                 </div>
               </div>

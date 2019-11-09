@@ -4,7 +4,7 @@ date: "2019-10-31"
 tags: ['Biology']
 featuredImage: '../images/botany.jpg'
 author: "MM Science"
-authorPic: '../images/author/mmscience.jpg'
+authorPic: '../images/author/MMScience.png'
 type: 'text'
 ---
 ရုက္ခဗေဒဆိုသည်မှာ အပင်လောကကို လေ့လာသည့် ပညာရပ်ကို ခေါ်သည်။ ထိုပညာရပ်သည် ဇီဝဗေဒ၏အရေးကြီး သော အစိတ်အပိုင်းနှစ်ခုအနက် တစ်ခုဖြစ်သည်။ ဇီဝဗေဒဆို သည်မှာ သက်ရှိမှန်သမျှကို လေ့လာသည့် ပညာရပ်ဖြစ်၍ ယင်း၏ အခြားအရေးကြီးသော အစိတ်အပိုင်းတစ်ခုမှာ ပါဏဗေဒ ဖြစ်သည်။

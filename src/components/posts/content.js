@@ -12,7 +12,7 @@ export default (props) => {
     `}>
       <h5>
         {props.tags.map((index) => (
-          <Link to={`/${kebabCase(index)}/`} alt={index}>
+          <Link to={`/${kebabCase(index)}/`} alt={index} aria-label="tag">
             <Badge color="info" style={{ marginRight: '3px' }}>{index}</Badge>
           </Link>
         ))}
@@ -20,6 +20,7 @@ export default (props) => {
       <Link
         to={props.to}
         alt={props.title}
+        aria-label="tag"
         css={css`
           text-decoration: none;
           color: inherit;

@@ -4,7 +4,7 @@ date: "2017-08-10"
 tags: ['Light']
 featuredImage: '../images/light.jpeg'
 author: "MM Science"
-authorPic: '../images/author/mmscience.jpg'
+authorPic: '../images/author/MMScience.png'
 type: 'text'
 ---
 အလင်းသည် လှိုင်းဖြစ်သည့်အတွက် လှိုင်းပြန်ခြင်း၊ လှိုင်းကွေ့ခြင်း၊ လှိုင်းထပ်ခြင်း၊ လှိုင်းသန့်ခြင်းဆိုသည့် ဂုဏ်သတ္တိရှိသည်။

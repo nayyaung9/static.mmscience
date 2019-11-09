@@ -4,7 +4,7 @@ date: "2019-10-28"
 tags: ['Physics']
 featuredImage: '../images/Parallel-world.jpg'
 author: "MM Science"
-authorPic: '../images/author/mmscience.jpg'
+authorPic: '../images/author/MMScience.png'
 type: 'text'
 ---
 "လက်​ရှိ​နေထိုင်​​နေကြတဲ့ကမ႓ာကြီးနဲ့

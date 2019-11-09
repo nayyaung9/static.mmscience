@@ -5,7 +5,6 @@ tags: ['Physics', 'Facts', 'Science']
 featuredImage: '../images/science-quiz.jpg'
 author: "Science Life"
 authorPic: '../images/author/science-life.jpg'
-type: 'text'
 ---
 အပျင်းပြေပေါ့ ဘာကြောင့်ရွေးရတယ်ဆိုတာလေးပါ ဝေမျှသွားကြပါဦး
 

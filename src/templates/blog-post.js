@@ -36,14 +36,14 @@ export default ({data}) => {
                }        
            `}>
               <div className="article">
-                <Img fluid={featuredImgFluid} loading="lazy" />
+                <Img fluid={featuredImgFluid} loading="lazy" alt={post.frontmatter.title} aria-label={post.frontmatter.title}/>
                 <div className="article__content" style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}>
                   <Typography style={{ fontSize: '20px' }}>
                     {post.frontmatter.title}
                   </Typography>
                   <div className="article_role_play">
                     <div className="article_owner">
-                      <img src={authorPic.src} alt={post.frontmatter.author} className="author__pic"/>
+                      <img src={authorPic.src} alt={post.frontmatter.author} aria-label={post.frontmatter.author} className="author__pic"/>
                     </div>
                     <div className="article__profile">
                       <span className="article__name">{post.frontmatter.author}</span>

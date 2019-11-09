@@ -5,7 +5,7 @@ date: "2019-11-03"
 tags: ['Technology']
 featuredImage: '../images/artificial-intelligence.jpg'
 author: "MM Science"
-authorPic: '../images/author/mmscience.jpg'
+authorPic: '../images/author/MMScience.png'
 type: 'text'
 ---
 “AI (စက်တို့ရဲ့ ဥာဏ်ရည်)”

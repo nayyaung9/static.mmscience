@@ -5,7 +5,7 @@ date: "2019-11-03"
 tags: ['Biology']
 featuredImage: '../images/anatomy.png'
 author: "MM Science"
-authorPic: '../images/author/mmscience.jpg'
+authorPic: '../images/author/MMScience.png'
 type: 'text'
 ---
 

@@ -17,7 +17,7 @@ export default function SimpleMenu() {
 
   return (
     <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} variant="contained" color="inherit" fullWidth>
+      <Button aria-controls="simple-menu" aria-label="select type" aria-haspopup="true" onClick={handleClick} variant="contained" color="inherit" fullWidth>
         select type
       </Button>
       <Menu
@@ -28,13 +28,13 @@ export default function SimpleMenu() {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>
-          <Link to='/wiki/' alt="feed">feed</Link>
+          <Link to='/wiki/' alt="feed" aria-label="feed">feed</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to='/wiki/new/' alt="Recently published">Recently published</Link>
+          <Link to='/wiki/new/' alt="Recently published" aria-label="wiki/new">Recently published</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to='/wiki/short-story/' alt="Shortest time to read">Shortest time to read</Link>
+          <Link to='/wiki/short-story/' alt="Shortest time to read" aria-label="wiki/short-story">Shortest time to read</Link>
         </MenuItem>
       </Menu>
     </div>

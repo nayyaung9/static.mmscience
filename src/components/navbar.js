@@ -133,11 +133,11 @@ export default function PersistentDrawerLeft() {
               text-align: center;
             }
           `}>
-            <Link to='/' style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }} alt="home">MM Science</Link>
+            <Link to='/' style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }} alt="home" aria-label="home">MM Science</Link>
           </Typography>
           
-            <Link to='/search/' style={{ color: 'var(--appBar-text)' }} alt="mmscience about">
-              <Button color="inherit">
+            <Link to='/search/' style={{ color: 'var(--appBar-text)' }} alt="mmscience about" aria-label="search">
+              <Button color="inherit" aria-label="searchIcon">
                 <SearchIcon />
               </Button>
             </Link>
@@ -168,25 +168,25 @@ export default function PersistentDrawerLeft() {
             </ListItemIcon>
             <ListItemText primary="Profile" />
           </ListItem>
-          <Link to='/' alt="home">
+          <Link to='/' alt="home" aria-label="home">
             <ListItem button style={{ color: 'var(--appBar-text)' }}>
               <ListItemIcon> <HomeIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          <Link to='/wiki/' style={{ color: 'var(--appBar-text)' }} alt="wiki">
+          <Link to='/wiki/' style={{ color: 'var(--appBar-text)' }} alt="wiki" aria-label="wiki">
             <ListItem button>
               <ListItemIcon> <DynamicFeedIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Feed" />
             </ListItem>
           </Link>
-          <Link to='/discover/' style={{ color: 'var(--appBar-text)' }} alt="discover">
+          <Link to='/discover/' style={{ color: 'var(--appBar-text)' }} alt="discover" aria-label="discover">
             <ListItem button>
               <ListItemIcon> <LabelIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Discover" />
             </ListItem>
           </Link>
-          <Link to='/videos' alt="video">
+          <Link to='/videos' alt="video" aria-label="video">
             <ListItem button style={{ color: 'var(--appBar-text)' }}>
               <ListItemIcon> <OndemandVideoIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="videos" />
@@ -195,13 +195,13 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          <Link to='/updates' alt="home">
+          <Link to='/updates' alt="updates" aria-label="updates">
             <ListItem button style={{ color: 'var(--appBar-text)' }}>
               <ListItemIcon> <SystemUpdateIcon  style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="Updates" />
             </ListItem>
           </Link>
-          <Link to='/help/' style={{ color: 'var(--appBar-text)' }} alt="help center">
+          <Link to='/help/' style={{ color: 'var(--appBar-text)' }} alt="help center" aria-label="help-center">
             <ListItem button>
               <ListItemIcon> <HelpIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>
               <ListItemText primary="How to use it" />

@@ -5,7 +5,7 @@ export default (props) => {
   return (
     <div className="article_role_play" style={{ color: 'var(--appBar-text)' }}>
       <div className="article_owner">
-        <img src={props.src} alt={props.name} className="author__pic" />
+        <img src={props.src} alt={props.name} aria-label={props.name} className="author__pic" />
       </div>
       <div css={css`
         margin-left: 12px;

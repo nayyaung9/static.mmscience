@@ -48,7 +48,13 @@ export default class SearchList extends Component {
                 border-radius: 0.5rem;
                 margin-bottom: 10px;
               `}>
-	            <Link to={"/" + page.path}>{page.title}</Link> <br />
+              <Link 
+                to={"/" + page.path} 
+                alt={page.title} 
+                aria-label={page.title}
+              >
+                {page.title}
+              </Link> <br />
                 <Badge color="success">
                   { page.tags.join(`, `) }
                 </Badge>

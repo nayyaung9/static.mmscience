@@ -4,7 +4,7 @@ date: "2019-10-30"
 tags: ['Science']
 featuredImage: '../images/na-ka-ta-bay-da.jpg'
 author: "MM Science"
-authorPic: '../images/author/mmscience.jpg'
+authorPic: '../images/author/MMScience.png'
 type: 'text'
 ---
 နက္ခတ္တဗေဒ (အင်္ဂလိပ်: astronomy) သည် ဂြိုဟ်များ၊ ကြယ်များ၊ ဂယ်လက်ဆီများနှင့် အာကာသအတွင်းရှိ အခြားအရာဝတ္ထုများကို လေ့လာသော ပညာရပ်ဖြစ်သည်။ နက္ခတ္တဗေဒသည် ရှေးအကျဆုံးသော သိပ္ပံပညာရပ်များတွင် တစ်ခုအပါအဝင်ဖြစ်ပြီး သမိုင်းမတင်ခင်အချိန်ကပင် စတင်ခဲ့ကြသည်။
