@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import Layout from '../components/layout'
 import HomePage from '../components/home'
 import TagBar from '../components/discover'
+import SEO from '../components/SEO'
 
 import FeatureImage from '../components/posts/featureImage'
 import Author from '../components/posts/author'
@@ -19,19 +20,9 @@ export default ({ data }) => {
     <React.Fragment>
       <Layout>
 
+        <SEO />
+        
         <main style={{ marginTop: '80px'}}>
-
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-          { name: 'description', content: 'An Online Library website for Myanmar Education' },
-          { name: 'keywords', content: 'reactjs, pwa, gatsbyjs' },
-          { name: 'image', content: '/icons/MMsciIcon192.png' },
-          { name: 'apple-mobile-web-app-capable', content: 'yes' }
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
         
         <Grid container spacing={3}>
           <TagBar tags={data.allMarkdownRemark.group} />
@@ -106,14 +97,6 @@ export default ({ data }) => {
 
 export const query = graphql `
 query {
-  site {
-    siteMetadata {
-      title
-      description
-      image
-      url
-    }
-  }
   allMarkdownRemark(
     sort: { fields: [frontmatter___date], order: DESC }, 
     limit: 6

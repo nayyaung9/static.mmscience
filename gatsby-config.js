@@ -4,10 +4,9 @@ module.exports = {
   siteMetadata: {
     title: `MM Science`,
     siteUrl: `https://mmscience-2019.firebaseapp.com`,
-    description:
-      "MMScience is an online library website for Myanmar High School Students.",
-    url: "https://mmscience-2019.firebaseapp.com", // No trailing slash allowed!
-    image: "./src/assets/mmscience0.jpg", // Path to your image you placed in the 'static' folder
+    description: "MMScience is an online library website for Myanmar High School Students.",
+    url: "https://mmscience-2019.firebaseapp.com", 
+    image: "./public/icons/MMsciIcon512.png", 
   },
   plugins:[
     {

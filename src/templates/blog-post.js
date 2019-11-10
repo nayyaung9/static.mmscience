@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { Helmet } from "react-helmet"
 import Img from 'gatsby-image'
 
 import Container from '@material-ui/core/Container'
@@ -13,6 +12,7 @@ import FeatureImage from '../components/posts/featureImage'
 import Author from '../components/posts/author'
 import Content from '../components/posts/content'
 import Reaction from '../components/posts/reaction'
+import SEO from '../components/SEO'
 
 export default ({data}) => {
 
@@ -22,21 +22,10 @@ export default ({data}) => {
 
   return (
     <Master>
+
+      <SEO description={post.excerpt} image={featuredImgFluid.src}/>
+      
       <main style={{ marginTop: '80px' }}>
-
-      <Helmet title={`MM Science | ${post.frontmatter.title}`} />
-
-      <Helmet
-          title={`MM Science | ${post.frontmatter.title}`}
-          meta={[
-          { name: 'description', content: `${post.excerpt}` },
-          { name: 'content-writer', content: `${post.frontmatter.author}` },
-          { name: 'keywords', content: 'reactjs, pwa, gatsbyjs' },
-          { name: 'apple-mobile-web-app-capable', content: 'yes' }
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
 
         <Container maxWidth="md">
           <Grid container spacing={3} justify="center">

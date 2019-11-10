@@ -9,10 +9,13 @@ import Author from '../components/posts/author'
 import Content from '../components/posts/content'
 import Layout from '../components/layout'
 import Cover from '../components/posts/cover'
+import SEO from '../components/SEO'
 
 export default ({ data }) => (
   <Layout>
-    
+
+    <SEO description="facts"/>
+
     <Cover title="Facts" totalCount={data.allMarkdownRemark.totalCount} />
 
     <main style={{ marginTop: '30px'}}>
