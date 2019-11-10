@@ -24,10 +24,10 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby';
 import { css } from '@emotion/core'
 import Theme from '../components/theme'
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import SystemUpdateIcon from '@material-ui/icons/SystemUpdate';
 import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
 import '../styles/global.css';
+import appLogo from '../assets/MMsciIcon512.png'
 
 const drawerWidth = 240;
 
@@ -141,6 +141,7 @@ export default function PersistentDrawerLeft() {
                 <SearchIcon />
               </Button>
             </Link>
+            
         </Toolbar>
       </AppBar>
       <Drawer
@@ -156,18 +157,18 @@ export default function PersistentDrawerLeft() {
         }}
       >
         <div className={classes.drawerHeader}>
+          <div style={{ margin: 'auto', display: 'flex'}}>
+            <img src={appLogo} width="30px" style={{ marginRight: '10px'}}/> 
+            <Typography variant="h6" style={{ fontFamily: 'Acme', color: 'var(--appBar-text)',  }}>
+            MM Science
+            </Typography>
+          </div>
           <IconButton onClick={handleDrawerClose} style={{ color: 'var(--appBar-text)' }}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
         <Divider />
         <List>          
-          <ListItem button style={{ color: 'var(--appBar-text)' }} disabled>
-            <ListItemIcon>   
-              <AccountCircle style={{ color: 'var(--appBar-text)' }}/>
-            </ListItemIcon>
-            <ListItemText primary="Profile" />
-          </ListItem>
           <Link to='/' alt="home" aria-label="home">
             <ListItem button style={{ color: 'var(--appBar-text)' }}>
               <ListItemIcon> <HomeIcon style={{ color: 'var(--appBar-text)' }}/> </ListItemIcon>

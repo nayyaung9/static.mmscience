@@ -15,7 +15,7 @@ export default ({ data }) => (
     
     <Cover title="Technology" totalCount={data.allMarkdownRemark.totalCount} />
 
-    <main style={{ marginTop: '80px'}}>
+    <main style={{ marginTop: '35px'}}>
       <Helmet title="MM Science | A Online Library website for Myanmar Education" />
       
       <Grid container spacing={3} 

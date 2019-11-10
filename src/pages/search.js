@@ -46,7 +46,7 @@ const Search = () => (
               fields {
                 slug
               }
-              excerpt
+              excerpt(truncate: true)
               timeToRead
             }
           }

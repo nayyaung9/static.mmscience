@@ -13,9 +13,9 @@ import Cover from '../components/posts/cover'
 export default ({ data }) => (
   <Layout>
     
-    <Cover title="Geology" totalCount={data.allMarkdownRemark.totalCount} />
+    <Cover title="Facts" totalCount={data.allMarkdownRemark.totalCount} />
 
-    <main style={{ marginTop: '80px'}}>
+    <main style={{ marginTop: '30px'}}>
       <Helmet title="MM Science | A Online Library website for Myanmar Education" />
       
       <Grid container spacing={3} 

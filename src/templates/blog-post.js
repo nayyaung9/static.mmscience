@@ -26,6 +26,18 @@ export default ({data}) => {
 
       <Helmet title={`MM Science | ${post.frontmatter.title}`} />
 
+      <Helmet
+          title={`MM Science | ${post.frontmatter.title}`}
+          meta={[
+          { name: 'description', content: `${post.excerpt}` },
+          { name: 'content-writer', content: `${post.frontmatter.author}` },
+          { name: 'keywords', content: 'reactjs, pwa, gatsbyjs' },
+          { name: 'apple-mobile-web-app-capable', content: 'yes' }
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+
         <Container maxWidth="md">
           <Grid container spacing={3} justify="center">
             <Grid item xs={12} sm={9}
@@ -142,6 +154,7 @@ export const query = graphql `
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt(truncate: true)
       frontmatter {
         title
         path
