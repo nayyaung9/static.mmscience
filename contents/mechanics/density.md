@@ -2,6 +2,7 @@
 title: "သိပ်သည်းဆ"
 date: "2019-10-06"
 tags: ['Mechanics']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/density.jpg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

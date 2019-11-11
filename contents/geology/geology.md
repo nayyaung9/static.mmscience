@@ -2,6 +2,7 @@
 title: "ဘူမိဗေဒ ဆိုတာ ဘာလဲ"
 date: "2019-10-06"
 tags: ['Geology']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/geo.jpeg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

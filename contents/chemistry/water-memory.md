@@ -2,6 +2,7 @@
 title: "ရေ မှတ်ဉာဏ် ဆိုတာ ဘာလဲ"
 date: "2019-10-28"
 tags: ['Chemistry']
+searchKeywords: ['water', 'momery', 'water-momery']
 featuredImage: '../images/water-memory.jpg'
 author: "Kyaw Swa Min"
 authorPic: '../images/author/Kyaw-Swa-Min.jpg'

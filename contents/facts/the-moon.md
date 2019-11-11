@@ -2,6 +2,7 @@
 title: "လ (The Moon) လရဲမျက်နှာပြင် လရဲ့ လေထု"
 date: "2019-11-09"
 tags: ['Science', 'Facts']
+searchKeywords: ['moon']
 featuredImage: '../images/the-moon.jpg'
 author: "MMSpaceScience"
 authorPic: '../images/author/mmspacescience.jpg'

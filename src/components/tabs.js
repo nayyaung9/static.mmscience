@@ -6,7 +6,6 @@ import { css } from '@emotion/core'
 import Typography from '@material-ui/core/Typography'
 
 export default class Tabs extends React.Component {
-
   render() {
     return (
       <Grid container spacing={3}>

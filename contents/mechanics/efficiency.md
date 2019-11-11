@@ -2,6 +2,7 @@
 title: "efficiency စွမ်းဆောင်ရည်"
 date: "2019-10-06"
 tags: ['Mechanics']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/force.jpg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

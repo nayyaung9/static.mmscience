@@ -2,6 +2,7 @@
 title: "What is Light?"
 date: "2017-08-10"
 tags: ['Light']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/light.jpeg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

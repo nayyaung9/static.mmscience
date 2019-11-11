@@ -3,6 +3,7 @@ path: 'biology/anatomy.md'
 title: "Anatomy-ဆိုသည်မှာ ဇီဝဗေဒ ပညာရပ်အကိုင်းခွဲတစ်ခုဖြစ်ပြီး သက်ရှိအရာများတွင်ရှိသောဖွဲ့စည်းပုံကိုလေ့လာခြင်းဖြစ်သည်။"
 date: "2019-11-03"
 tags: ['Biology']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/anatomy.png'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'
@@ -13,9 +14,6 @@ Anatomy-ဆိုသည်မှာ ဇီဝဗေဒ ပညာရပ်အက�
 ဖွဲ့စည်းပုံကိုလေ့လာခြင်းဖြစ်သည်။ ခန္ဓာဗေဒ ဟုမြန်မာပြန်လျှင် သင့်လျှော်မည်။
 
 Basic Anatomy အခြေခံ (အနာတော်မီ) ခန္ဓာဗေဒ
-
-![alt text](./images/botany.jpg)
-![alt](./biology.jpeg)
 
 လူ့ခန္ဓာကိုယ်သည် သက်ရှိသတ္တဝါများအနက် အရှုပ်ထွေးဆုံးဖြစ်ပြီး။ Microscope အနုကြည့် မှန်ဘီလူး ဖြင့်သာ မြင်ရသည့် သေးငယ်လွန်းသော အစိတ်အပိုင်း Cells (ဆဲလ်) သန်းထောင်ပေါင်းများစွာဖြင့် ဖွဲ့စည်းထားသည်။
 

@@ -2,6 +2,7 @@
 title: "ရုက္ခဗေဒဆိုသည်မှာ အပင်လောကကို လေ့လာသည့်"
 date: "2019-10-31"
 tags: ['Biology']
+searchKeywords: ['biology', 'botany', 'plants']
 featuredImage: '../images/botany.jpg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

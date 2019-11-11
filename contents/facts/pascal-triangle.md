@@ -2,6 +2,7 @@
 title: "ပါစကယ်တြိဂံကို ကြည့်လိုက်ရင် သပ်သပ်ရပ်ရပ် စီစဉ်ထားတဲ့ တောင်လိုမျိုးကိန်း အပုံလိုက်ကြီးကို တွေ့နိုင်ပါတယ်"
 date: "2019-11-06"
 tags: ['Physics', 'Facts', 'Mathematics']
+searchKeywords: ['pascle triangle']
 featuredImage: '../images/pascle-triangle.jpg'
 author: "Tun Lin Aung"
 authorPic: '../images/author/tun-lin-aung.jpg'

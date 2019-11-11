@@ -3,6 +3,7 @@ path: "/what-is-biology"
 title: "သက်ရှိတို့၏ တည်ဆောက်ပုံနှင့် ဆောင်ရွက်ချက်များအား သိပ္ပံနည်းကျ စမ်းသပ်လေ့လာသောဘာသာရပ်"
 date: "2019-10-27"
 tags: ['Biology']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/biology.jpeg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

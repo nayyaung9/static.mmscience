@@ -2,6 +2,7 @@
 title: "ဇီဝဓာတုဗေဒ ဆိုတာ ဘာလဲ"
 date: "2019-10-05"
 tags: ['Chemistry']
+searchKeywords: ['chemistry', 'biochemistry']
 featuredImage: '../images/biochemistry.jpg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

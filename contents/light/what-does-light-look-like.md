@@ -3,6 +3,7 @@ path: "/light/what-does-a-light-look-like"
 title: "အလင်းဆိုတာ အမှုန်လား..လှိုင်းလား"
 date: "2019-10-27"
 tags: ['Light']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/what-light-look-like.jpg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

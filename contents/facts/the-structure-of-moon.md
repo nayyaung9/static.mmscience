@@ -2,6 +2,7 @@
 title: "လ (The Moon) အတွင်းပိုင်းဖွဲ့စည်းပုံ လရဲ့မှုလအစ"
 date: "2019-11-09"
 tags: ['Science', 'Facts']
+searchKeywords: ['moon']
 featuredImage: '../images/the-structure-of-moon.jpg'
 author: "MMSpaceScience"
 authorPic: '../images/author/mmspacescience.jpg'

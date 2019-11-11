@@ -2,6 +2,7 @@
 title: "Wormhole(တွင်းလှိုင်ခေါင်းများ)"
 date: "2019-10-28"
 tags: ['Science']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/worm-hole.jpg'
 author: "Newstein"
 authorPic: '../images/author/Newstein.jpg'

@@ -2,6 +2,7 @@
 title: "အလေးချိန်ရဲ့ ဗဟိုချက်"
 date: "2019-10-06"
 tags: ['Mechanics']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/centre-of-gravity.jpg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'

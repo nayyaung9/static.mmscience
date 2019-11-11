@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { Helmet } from 'react-helmet'
 
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'

@@ -3,6 +3,7 @@ path: 'mechanics/atom/'
 title: "အက်တမ် (အင်္ဂလိပ်: Atom) ဆိုသည်မှာ ပုံမှန်အရာဝတ္တု ပစ္စည်းတစ်ခု၏ အသေးငယ်ဆုံး အစိတ်အပိုင်းအား"
 date: "2019-11-03"
 tags: ['Mechanics']
+searchKeywords: ['anatomy', 'biology']
 featuredImage: '../images/atom.jpg'
 author: "MM Science"
 authorPic: '../images/author/MMScience.png'
