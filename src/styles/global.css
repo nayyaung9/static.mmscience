@@ -5,6 +5,11 @@
 .tags_scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Hide scrollbar for IE and Edge */
+.tags_scrollbar {
+  -ms-overflow-style: none;
+}
 /* body::-webkit-scrollbar { 
   display: none;  
 } */
@@ -164,3 +169,10 @@ a.nav-link:hover {
   margin: 20px auto;
 }
 
+.suggestedWords {
+  margin: 0 10px 10px 0;
+  padding: 10px;
+  border: 0;
+  border-radius: .25rem;
+  box-shadow: 3px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}

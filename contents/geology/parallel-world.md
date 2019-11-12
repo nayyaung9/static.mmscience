@@ -1,4 +1,5 @@
 ---
+path: 'geology/parallel-world'
 title: "Parallel world ဆိုတာ ဘာလဲ"
 date: "2019-10-28"
 tags: ['Physics']

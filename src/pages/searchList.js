@@ -5,7 +5,6 @@ import { css } from '@emotion/core'
 import { Index } from "elasticlunr"
 import { Link } from 'gatsby'
 import { Badge } from 'reactstrap'
-import Grid from '@material-ui/core/Grid'
 
 // SearchList component
 export default class SearchList extends Component {
@@ -20,19 +19,45 @@ export default class SearchList extends Component {
   render() {
     return (
       <React.Fragment>
+        <Typography variant="h6">Suggested words</Typography>
+        <div
+          className="tags_scrollbar"
+          css={css`
+            overflow: auto;
+            white-space: nowrap;
+        `}>
+        
+          {this.props.words && this.props.words.map((tag) => (
+            <div
+              key={tag.fieldValue}
+              css={css`
+                display: inline-block;
+                text-align: center;
+                text-decoration: none;
+                margin: 10px 2px 20px 2px;
+            `}>
+              <button 
+                style={{ backgroundColor: 'var(--appBar-bg)', color: 'var(--appBar-text)'}}  
+                value={tag.fieldValue} 
+                onClick={this.searchText}
+                className="suggestedWords"
+              >
+                {tag.fieldValue}
+              </button>
+            </div>
+          ))}
+        </div>
+        
+
 				<div 
         css={css`
           background: #fff;
-          border-radius: 0.5rem;
-          padding: 10px;
-          @media screen and (max-width: 700px) { 
-            padding: 0;
-          }
+          border-radius: .25rem;
         `}>
 					<TextField
 						id="outlined-basic"
 						label="Search articles"
-						variant="outlined"
+						variant="filled"
 						fullWidth={true}
             defaultValue={this.state.query}
             value={this.state.query}
@@ -40,47 +65,40 @@ export default class SearchList extends Component {
 					/> 
 				</div>
 					
-				<div style={{ marginTop: '30px' }}>
+				<div style={{ margin: '30px 2px 0 2px' }}>
 					{this.state.results.map(page => (
             <div 
             key={page.id}
+            style={{ backgroundColor: 'var(--appBar-bg)' }}
             css={css`
               padding: 10px;
-              background: #fff;
               border-radius: 0.5rem;
               margin-bottom: 10px;
+              box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
             `}>
               <Link 
                 to={"/" + page.path} 
                 alt={page.title} 
                 aria-label={page.title}
+                style={{ color: 'var(--appBar-text)' }}
               >
                 {page.title}
               </Link> <br />
-              <Badge color="success">
-                { page.tags.join(`, `) }
-              </Badge>
+              {page.tags.map((tag) => (
+                <Badge color="info" style={{ marginRight: '3px'}}>
+                  { tag }
+                </Badge>
+              ))}
             </div>
 					))}
 				</div>
       <div>
-      
-      <Typography>suggested tags</Typography>
-      {this.props.words && this.props.words.edges.map(({node}) => (
-        <div style={{ display: 'inline'}}>
-          {node.frontmatter.searchKeywords.map((index) => (
-            <button style={{ margin: '0 10px 10px 0', padding: '5px'}} value={index} onClick={this.searchText}>
-              {index}
-            </button>
-          ))}
-        </div>
-      ))}
 
-      {this.props.words && this.props.words.group.map((tag) => (
+      {/* {this.props.words && this.props.words.group.map((tag) => (
           <Badge color="secondary" style={{ margin: '0 10px 10px 0', padding: '5px'}} value={tag.fieldValue} onClick={this.searchText}>
           {tag.fieldValue}
         </Badge>
-      ))}
+      ))} */}
          
  </div>
 				</React.Fragment>

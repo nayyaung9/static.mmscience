@@ -2,14 +2,16 @@ import React from "react"
 import Layout from '../components/layout'
 import { graphql } from "gatsby"
 import SearchList from "./searchList"
+import SEO from '../components/SEO'
 
 const Search = ({ data }) => {
   return(
     <Layout>
+      <SEO />
       <header style={{ marginTop: '80px'}}>
         <SearchList 
           searchIndex={data.siteSearchIndex.index}  
-          words={data.allMarkdownRemark}
+          words={data.allMarkdownRemark.group}
         />
       </header>
     </Layout>
@@ -24,7 +26,7 @@ query SearchIndexQuery {
     index
   }
   allMarkdownRemark {
-    group(field: frontmatter___tags) {
+    group(field: frontmatter___searchKeywords) {
       fieldValue
       totalCount
     }

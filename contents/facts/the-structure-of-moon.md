@@ -1,4 +1,5 @@
 ---
+path: 'facts/the-structure-of-moon'
 title: "လ (The Moon) အတွင်းပိုင်းဖွဲ့စည်းပုံ လရဲ့မှုလအစ"
 date: "2019-11-09"
 tags: ['Science', 'Facts']

@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://mmscience-2019.firebaseapp.com`,
     description: "MMScience is an online library website for Myanmar High School Students.",
     url: "https://mmscience-2019.firebaseapp.com", 
-    image: "./public/icons/MMsciIcon512.png", 
+    image: "/public/icons/MMsciIcon512.png", 
   },
   plugins:[
     {

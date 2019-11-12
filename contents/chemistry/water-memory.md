@@ -1,4 +1,5 @@
 ---
+path: 'chemistry/water-memory'
 title: "ရေ မှတ်ဉာဏ် ဆိုတာ ဘာလဲ"
 date: "2019-10-28"
 tags: ['Chemistry']

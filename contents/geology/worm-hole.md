@@ -1,4 +1,5 @@
 ---
+path: 'geology/worm-hole'
 title: "Wormhole(တွင်းလှိုင်ခေါင်းများ)"
 date: "2019-10-28"
 tags: ['Science']

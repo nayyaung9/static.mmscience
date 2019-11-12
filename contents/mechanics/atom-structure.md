@@ -1,4 +1,5 @@
 ---
+path: 'mechanics/atom-structure'
 title: "သာမာန်အားဖြင့် အက်တမ် တလုံးသည် လျှပ်စစ်ဓာတ် ပျက်ပြယ် နေရမည်"
 date: "2019-11-03"
 tags: ['Atom']

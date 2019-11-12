@@ -1,4 +1,5 @@
 ---
+path: 'facts/the-way-to-learn-physics'
 title: "ရုပဗေဒလေ့လာမယ်ဆိုရင် ပုံဖော်တတ်ဖို့ လိုပါတယ်ဗျ ဖြည်းဖြည်းချင်းဖတ်ကြည့်ပါ"
 date: "2019-11-06"
 tags: ['Physics', 'Facts']

@@ -1,4 +1,5 @@
 ---
+path: 'facts/science-quiz'
 title: "ပေါ့ပေါ့ပါးပါးလေးတွေ ဖြေကြည့်ကြပါဦးဗျ"
 date: "2019-11-06"
 tags: ['Physics', 'Facts', 'Science']

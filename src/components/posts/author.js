@@ -11,7 +11,8 @@ export default (props) => {
         margin-left: 12px;
       `}>
         <span css={css`
-          font-weight: 700px;
+          font-weight: bold;
+          font-size: 18px;
         `}>
           {props.name}
         </span>

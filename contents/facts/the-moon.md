@@ -1,4 +1,5 @@
 ---
+path: 'facts/the-moon'
 title: "လ (The Moon) လရဲမျက်နှာပြင် လရဲ့ လေထု"
 date: "2019-11-09"
 tags: ['Science', 'Facts']
