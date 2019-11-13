@@ -19,7 +19,7 @@ export default class SearchList extends Component {
   render() {
     return (
       <React.Fragment>
-        <Typography variant="h6">Suggested words</Typography>
+        <Typography variant="h6" style={{ color: 'var(--appBar-text)'}}  >Suggested words</Typography>
         <div
           className="tags_scrollbar"
           css={css`
@@ -65,7 +65,7 @@ export default class SearchList extends Component {
 					/> 
 				</div>
 					
-				<div style={{ margin: '30px 2px 0 2px' }}>
+				<div style={{ margin: '30px 0' }}>
 					{this.state.results.map(page => (
             <div 
             key={page.id}
@@ -93,16 +93,8 @@ export default class SearchList extends Component {
 					))}
 				</div>
       <div>
-
-      {/* {this.props.words && this.props.words.group.map((tag) => (
-          <Badge color="secondary" style={{ margin: '0 10px 10px 0', padding: '5px'}} value={tag.fieldValue} onClick={this.searchText}>
-          {tag.fieldValue}
-        </Badge>
-      ))} */}
-         
- </div>
-				</React.Fragment>
-     
+    </div>
+		</React.Fragment>
     )
   }
 

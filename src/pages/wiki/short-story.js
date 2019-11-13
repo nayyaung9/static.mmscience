@@ -82,7 +82,7 @@ export default ({ data }) => {
                  </div>
                  <Content 
                    to={node.fields.slug}
-                   title={node.frontmatter.title}
+                   title={node.excerpt}
                    tags={node.frontmatter.tags}
                  />
                </div>
@@ -130,7 +130,7 @@ query {
         fields {
           slug
         }
-        excerpt
+        excerpt(truncate: true)
         timeToRead
       }
     }

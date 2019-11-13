@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import { Helmet } from "react-helmet"
 import Layout from '../components/layout'
 import ReadType from '../components/read-type'
-import '../styles/global.css'
+
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
